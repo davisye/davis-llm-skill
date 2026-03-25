@@ -1,0 +1,7 @@
+interface:
+  display_name: "Project Skill Bootstrap"
+  short_description: "按项目技术栈生成本地 SKILL.md 与 .project-skills"
+  default_prompt: "Use $project-skill-bootstrap to inspect this repository, detect its stack, and generate a project-local SKILL.md plus focused .project-skills references."
+
+policy:
+  allow_implicit_invocation: true

@@ -19,6 +19,7 @@
 - `gh-address-comments`
 - `gh-fix-ci`
 - `local-system-admin-context`
+- `project-skill-bootstrap`
 - `skillsmp-search`
 - `skill-repo-manager`
 
