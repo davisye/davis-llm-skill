@@ -1,6 +1,6 @@
 ---
 name: skill-repo-manager
-description: Use when working with the davis-llm-skill repository itself: adding skills, syncing them into ~/.codex/skills, preparing multi-client adapters, reviewing drift, or resolving conflicts between the repo copy and deployed copies.
+description: "Use when working with the davis-llm-skill repository itself: adding skills, syncing them into ~/.codex/skills, preparing multi-client adapters, reviewing drift, or resolving conflicts between the repo copy and deployed copies."
 ---
 
 # Skill Repo Manager
