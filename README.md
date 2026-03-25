@@ -2,6 +2,8 @@
 
 A versioned skill pack for OpenAI Codex, GitHub Copilot CLI, and VS Code Copilot.
 
+[中文说明 / README.zh-CN](./README.zh-CN.md)
+
 This repository keeps reusable skill workflows in one place, then maps them into the formats each client understands.
 
 ## What this repo contains
