@@ -19,6 +19,7 @@ This repository keeps reusable skill workflows in one place, then maps them into
 - `gh-address-comments`
 - `gh-fix-ci`
 - `local-system-admin-context`
+- `skillsmp-search`
 - `skill-repo-manager`
 
 ## Repository model

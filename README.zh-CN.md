@@ -19,6 +19,7 @@
 - `gh-address-comments`
 - `gh-fix-ci`
 - `local-system-admin-context`
+- `skillsmp-search`
 - `skill-repo-manager`
 
 ## 仓库模型

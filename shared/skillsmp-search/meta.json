@@ -1,0 +1,40 @@
+{
+  "title": "SkillsMP Search",
+  "copilot_cli_intro": "Use this workflow when GitHub Copilot CLI needs to discover community skills from SkillsMP before installation or adaptation.",
+  "copilot_rules": [
+    "Use keyword search for exact terms such as tool names, formats, and platforms.",
+    "Use AI semantic search for goal-oriented requests when the user does not know exact skill names.",
+    "Keep queries short and concrete.",
+    "Rank results by fit, repository quality signals, stars, and recency.",
+    "Treat marketplace results as discovery only and inspect linked repositories before recommending adoption."
+  ],
+  "copilot_avoid": [
+    "Treating a marketplace listing as proof of safety",
+    "Using vague searches such as `best skills` without narrowing intent",
+    "Recommending installation before reviewing the underlying repository"
+  ],
+  "vscode_intro": "Use SkillsMP when the task is to discover community skills that match a tool, workflow, or intent.",
+  "vscode_rules": [
+    "Prefer keyword search for exact terms and AI search for intent-heavy prompts.",
+    "Keep queries short and concrete.",
+    "Summarize why each returned skill matches the user's request.",
+    "Treat SkillsMP as a discovery index, not a security guarantee.",
+    "Recommend repo review before installation or reuse."
+  ],
+  "instruction_rules": [
+    "Use the SkillsMP workflow for requests to discover or compare community skills.",
+    "Choose keyword search for exact terms and AI search for intent-heavy requests.",
+    "Keep queries short and concrete.",
+    "Rank results by fit, stars, recency, and repository quality signals.",
+    "Treat marketplace listings as discovery, then inspect the repository before recommending installation."
+  ],
+  "prompt_title": "SkillsMP Search Prompt",
+  "prompt_intro": "Use SkillsMP to find relevant community skills, then summarize the best candidates and call out review steps before adoption.",
+  "prompt_checklist": [
+    "Choose keyword or AI search based on how specific the user's request is.",
+    "Use one concrete query at a time.",
+    "Summarize the top matching skills with name, repo, and fit.",
+    "Separate marketplace discoveries from your own recommendation.",
+    "Call out that the repository should be reviewed before installation."
+  ]
+}

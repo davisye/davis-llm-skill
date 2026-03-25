@@ -1,0 +1,7 @@
+interface:
+  display_name: "SkillsMP Search"
+  short_description: "搜索 SkillsMP 社区 skill 并做候选筛选"
+  default_prompt: "Use $skillsmp-search to find community skills that match a tool, workflow, or goal, then summarize the best candidates and any review risks."
+
+policy:
+  allow_implicit_invocation: true
