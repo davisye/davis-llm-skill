@@ -1,0 +1,7 @@
+interface:
+  display_name: "Skill Repo Manager"
+  short_description: "维护技能仓库、同步部署副本并处理冲突"
+  default_prompt: "Use $skill-repo-manager to manage the davis-llm-skill repository, sync skills safely, and resolve drift."
+
+policy:
+  allow_implicit_invocation: true

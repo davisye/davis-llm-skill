@@ -1,0 +1,15 @@
+interface:
+  display_name: "Context7 Docs"
+  short_description: "用 Context7 获取最新库文档、版本差异与代码示例"
+  default_prompt: "Use $context7-docs to answer with current, version-specific library documentation and examples via Context7."
+
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "context7"
+      description: "Context7 MCP server"
+      transport: "streamable_http"
+      url: "https://mcp.context7.com/mcp"
+
+policy:
+  allow_implicit_invocation: true
