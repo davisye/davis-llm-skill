@@ -1,8 +1,9 @@
-# Local System Admin Instructions
+# Local System Admin Context Instructions
 
-When changing local machine software or configuration:
+Use this workflow for changes to the current machine's stable software or configuration baseline.
 
-- Read the current machine baseline first.
-- Verify system state instead of assuming.
-- Update the baseline record if a stable change was made.
-- Do not copy one host's baseline to another host without review.
+- Read the machine baseline first.
+- Verify actual system state with commands.
+- Apply the requested local change.
+- Update the stable baseline record if the machine baseline changed.
+- This workflow is machine-specific and should be reviewed before reuse on another host.

@@ -1,9 +1,10 @@
 # GH Fix CI Instructions
 
-When a PR has failing GitHub Actions checks:
+Use this workflow when GitHub Actions checks on a PR are failing.
 
-- Check `gh` auth first.
-- Inspect failing checks and fetch logs.
-- Summarize the failure clearly.
-- Draft a fix plan.
-- Do not implement until the user approves.
+- Verify `gh` authentication.
+- Resolve the target PR.
+- Inspect failing GitHub Actions checks and fetch logs.
+- Summarize the failure context with a short actionable snippet.
+- Propose a fix plan.
+- Wait for explicit approval before implementation.

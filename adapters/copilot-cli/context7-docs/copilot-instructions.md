@@ -1,10 +1,11 @@
 # Context7 Docs Instructions
 
-When a task depends on current framework or library docs:
+Use this repository workflow when GitHub Copilot CLI needs up-to-date, version-specific library or framework documentation.
 
-- Use Context7 instead of memory.
-- Resolve the library ID first unless the user already supplied `/org/project` or `/org/project/version`.
-- Prefer official and high-reputation matches.
-- Use narrow queries describing the exact API, feature, migration, or outcome.
-- If the user names a version, prefer a versioned library ID.
-- In the response, name the chosen library ID and note any assumptions.
+- Prefer Context7-backed documentation over model memory for evolving APIs.
+- If the user provides a Context7 library ID like `/org/project` or `/org/project/version`, use it directly.
+- Otherwise resolve the correct library before querying docs.
+- Prefer official or high-reputation matches.
+- If version-specific behavior matters, choose a versioned library ID.
+- Ask narrow, task-shaped questions such as `Next.js 15 middleware matcher examples` instead of broad prompts like `next.js docs`.
+- In the answer, state the selected library ID and separate retrieved facts from inference.

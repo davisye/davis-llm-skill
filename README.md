@@ -1,78 +1,109 @@
 # davis-llm-skill
 
-This repository is the source of truth for reusable LLM skills shared across Codex, GitHub Copilot CLI, and VS Code assistants.
+A versioned skill pack for OpenAI Codex, GitHub Copilot CLI, and VS Code Copilot.
 
-## Goals
+This repository keeps reusable skill workflows in one place, then maps them into the formats each client understands.
 
-- Keep reusable skills under version control.
-- Separate shared workflow content from client-specific adapters.
-- Provide a safe sync path into `~/.codex/skills` without blindly overwriting local edits.
+## What this repo contains
 
-## Layout
+- Codex-compatible skills under `skills/`
+- Shared workflow sources under `shared/`
+- Generated or maintained adapter files for Copilot CLI and VS Code Copilot under `adapters/`
+- Utility scripts for generation, sync, and installation under `scripts/`
 
-- `skills/`: canonical skill folders in Codex-compatible format
-- `shared/`: reusable references, templates, and future normalized source files
-- `scripts/`: sync and maintenance scripts
-- `adapters/codex/`: notes or generated files for Codex-specific packaging
-- `adapters/copilot-cli/`: future GitHub Copilot CLI instruction adapters
-- `adapters/vscode-copilot/`: future VS Code Copilot instruction adapters
+## Current skills
 
-## Adapter strategy
-
-- Put shared workflow semantics in `shared/<skill-name>/`.
-- Keep `skills/<skill-name>/` as the Codex deployment format.
-- Generate or maintain Copilot-focused files under `adapters/copilot-cli/<skill-name>/`.
-- Generate or maintain VS Code Copilot files under `adapters/vscode-copilot/<skill-name>/`.
-- Do not assume Copilot can consume Codex `SKILL.md` directly.
-
-The first example is `context7-docs`:
-
-- Shared source: `shared/context7-docs/core.md`
-- Codex skill: `skills/context7-docs/`
-- Copilot CLI adapter: `adapters/copilot-cli/context7-docs/`
-- VS Code Copilot adapter: `adapters/vscode-copilot/context7-docs/`
-
-The same pattern now exists for:
-
+- `context7-docs`
 - `gh-address-comments`
 - `gh-fix-ci`
 - `local-system-admin-context`
+- `skill-repo-manager`
 
-## Current source policy
+## Repository model
 
-- For now, `skills/` is the canonical source for existing Codex skills.
-- Local installed skills under `~/.codex/skills` are treated as deployed copies.
-- Edits should be made in this repository first, then synced outward.
+The repository uses a shared-first workflow:
 
-## Sync policy
+1. Put reusable workflow semantics in `shared/<skill-name>/`
+2. Keep Codex deployment files in `skills/<skill-name>/`
+3. Generate or maintain Copilot CLI files in `adapters/copilot-cli/<skill-name>/`
+4. Generate or maintain VS Code Copilot files in `adapters/vscode-copilot/<skill-name>/`
+5. Sync Codex skills into `~/.codex/skills/` only after reviewing changes
 
-- Default sync direction is repo -> `~/.codex/skills`.
-- If a target skill already exists and differs, sync refuses to overwrite unless `--force` is passed.
-- Before force-overwriting, review the diff and decide which side is authoritative.
-- Do not edit the same skill independently in multiple installed locations.
+This avoids treating one client's file format as the canonical source for every other client.
 
-## Common workflows
+## Directory layout
 
-Sync one skill into Codex:
+```text
+skills/                    Codex skill folders
+shared/                    Shared workflow source files
+adapters/copilot-cli/      AGENTS.md and Copilot CLI instructions
+adapters/vscode-copilot/   VS Code Copilot instructions and prompt files
+scripts/                   Generator, installer, and sync tools
+```
+
+## Generate adapters
+
+Regenerate adapter files from the shared skill sources:
+
+```bash
+python scripts/generate_adapters.py --all
+```
+
+Generate only one skill:
+
+```bash
+python scripts/generate_adapters.py context7-docs
+```
+
+## Sync into Codex
+
+Sync one skill into `~/.codex/skills`:
 
 ```bash
 ./scripts/sync_codex_skill.sh context7-docs
 ```
 
-Sync all tracked skills into Codex:
+Sync all tracked skills:
 
 ```bash
 ./scripts/sync_codex_skill.sh --all
 ```
 
-Force overwrite deployed copies after reviewing diffs:
+Force overwrite deployed copies after diff review:
 
 ```bash
 ./scripts/sync_codex_skill.sh --all --force
 ```
 
-## Next steps
+## Install on a new machine
 
-- Add adapter generators for Copilot CLI and VS Code Copilot instruction files.
-- Normalize shared content so one workflow can emit multiple client formats.
-- Add install/update commands for other machines.
+Clone or update the repository, then sync all Codex skills:
+
+```bash
+./scripts/install_codex_skills.sh
+```
+
+You can also pass a custom repo URL or install directory:
+
+```bash
+./scripts/install_codex_skills.sh https://github.com/DavisYe/davis-llm-skill.git ~/project/davis-llm-skill
+```
+
+## Cross-platform notes
+
+- Codex consumes `skills/<name>/`
+- Copilot CLI consumes instruction-oriented files such as `AGENTS.md`
+- VS Code Copilot consumes `.github/copilot-instructions.md`, scoped instruction files, and prompt files
+- `local-system-admin-context` is machine-specific and should not be copied to another machine without reviewing its baseline data
+
+## Contribution workflow
+
+1. Update the shared source when the skill has reusable semantics
+2. Regenerate adapters with `python scripts/generate_adapters.py --all`
+3. Update Codex-specific files if needed
+4. Sync to local Codex with `./scripts/sync_codex_skill.sh --all`
+5. Commit and push
+
+## License
+
+This repository includes files copied from `openai/skills` for some skills. Preserve their license files and review upstream licensing before redistributing modified copies.

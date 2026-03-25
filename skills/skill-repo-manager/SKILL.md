@@ -21,6 +21,7 @@ Use this skill when the task is about maintaining the shared skill repository, n
 4. Use `scripts/sync_codex_skill.sh <skill-name>` for one skill or `scripts/sync_codex_skill.sh --all` for a full sync.
 5. Only use `--force` after reviewing differences and deciding the repo is authoritative.
 6. After sync, tell the user whether Codex needs a restart to pick up new or changed skills.
+7. When shared skill text changes, regenerate Copilot adapters with `scripts/generate_adapters.py --all` before committing.
 
 ## Conflict Rules
 
@@ -46,9 +47,12 @@ When adding or updating a cross-platform skill:
 3. Update Copilot CLI files under `adapters/copilot-cli/<skill-name>/`.
 4. Update VS Code Copilot files under `adapters/vscode-copilot/<skill-name>/`.
 5. Sync the Codex copy into `~/.codex/skills` if the installed version should change.
+6. Regenerate adapters if the shared source is authoritative.
 
 ## Paths
 
 - Repo root: `/home/davisye/project/davis-llm-skill`
 - Codex deploy target: `/home/davisye/.codex/skills`
 - Sync script: `/home/davisye/project/davis-llm-skill/scripts/sync_codex_skill.sh`
+- Adapter generator: `/home/davisye/project/davis-llm-skill/scripts/generate_adapters.py`
+- New-machine installer: `/home/davisye/project/davis-llm-skill/scripts/install_codex_skills.sh`

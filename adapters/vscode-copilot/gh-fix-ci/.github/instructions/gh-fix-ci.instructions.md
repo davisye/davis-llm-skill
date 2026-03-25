@@ -1,10 +1,10 @@
----
-applyTo: "**"
----
+        ---
+        applyTo: "**"
+        ---
 
-For failing GitHub Actions PR checks:
+        For failing GitHub Actions PR checks:
 
-- Verify `gh` authentication.
+        - Verify `gh` authentication.
 - Inspect failing checks and logs.
 - Summarize the actionable failure.
 - Draft a plan.
