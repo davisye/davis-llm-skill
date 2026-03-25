@@ -1,0 +1,36 @@
+{
+  "title": "GH Address Comments",
+  "copilot_cli_intro": "Use this workflow when handling review comments on the open GitHub PR for the current branch.",
+  "copilot_rules": [
+    "Verify `gh` authentication first.",
+    "Resolve the PR from the current branch unless the user specifies one.",
+    "Fetch review threads and comments needing attention.",
+    "Number them and summarize the required change for each.",
+    "Ask the user which numbered items should be addressed.",
+    "Apply fixes only for the selected comments."
+  ],
+  "vscode_intro": "Use the GitHub comment-handling workflow for review comments on the current PR.",
+  "vscode_rules": [
+    "Verify `gh` auth first.",
+    "Resolve the current PR.",
+    "Fetch comments and review threads.",
+    "Number them and summarize the required change.",
+    "Ask which numbered items should be addressed."
+  ],
+  "instruction_rules": [
+    "For GitHub PR comment work:",
+    "Verify `gh` auth.",
+    "Enumerate actionable comments.",
+    "Summarize the required fix for each item.",
+    "Ask the user which items to address before changing code."
+  ],
+  "prompt_title": "GH Address Comments Prompt",
+  "prompt_intro": "Handle PR review comments safely.",
+  "prompt_checklist": [
+    "Verify `gh` authentication.",
+    "Resolve the PR.",
+    "Fetch and number actionable comments.",
+    "Summarize each required change.",
+    "Ask which items to address before implementing."
+  ]
+}

@@ -55,6 +55,8 @@ Generate only one skill:
 python scripts/generate_adapters.py context7-docs
 ```
 
+The generator reads machine-readable metadata from `shared/<skill-name>/meta.json`.
+
 ## Sync into Codex
 
 Sync one skill into `~/.codex/skills`:
@@ -89,6 +91,20 @@ You can also pass a custom repo URL or install directory:
 ./scripts/install_codex_skills.sh https://github.com/DavisYe/davis-llm-skill.git ~/project/davis-llm-skill
 ```
 
+## Install VS Code Copilot files into a project
+
+Copy one skill's VS Code Copilot adapter into a target project:
+
+```bash
+./scripts/install_vscode_copilot_adapter.sh context7-docs ~/project/my-app
+```
+
+If the target already contains `.github` instruction files and you want this repository copy to win:
+
+```bash
+./scripts/install_vscode_copilot_adapter.sh context7-docs ~/project/my-app --force
+```
+
 ## Cross-platform notes
 
 - Codex consumes `skills/<name>/`
@@ -99,10 +115,15 @@ You can also pass a custom repo URL or install directory:
 ## Contribution workflow
 
 1. Update the shared source when the skill has reusable semantics
+2. Update `shared/<skill-name>/meta.json` when adapter wording changes
 2. Regenerate adapters with `python scripts/generate_adapters.py --all`
 3. Update Codex-specific files if needed
 4. Sync to local Codex with `./scripts/sync_codex_skill.sh --all`
 5. Commit and push
+
+## CI
+
+GitHub Actions validates that generated adapter files are up to date by rerunning the generator and checking for diffs.
 
 ## License
 
