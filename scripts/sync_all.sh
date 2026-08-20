@@ -53,5 +53,5 @@ echo "=== Step 2/2: Check for hub-only skills ==="
 echo ""
 
 echo "Sync complete. Active skills:"
-echo "  Codex hub (~/.agents/skills): $(ls "$HOME/.agents/skills/" 2>/dev/null | grep -v '^\.' | wc -l) skills"
+echo "  Codex hub (~/.agents/skills): $(ls -d "$HOME/.agents/skills/"*/ 2>/dev/null | wc -l) skills"
 echo "  Repo: $(find "$REPO_ROOT/skills" -mindepth 1 -maxdepth 1 -type d | wc -l) skills"
