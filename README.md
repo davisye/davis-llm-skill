@@ -1,77 +1,56 @@
 # davis-llm-skill
 
-A versioned skill pack for OpenAI Codex, GitHub Copilot CLI, and VS Code Copilot.
+A versioned skill pack for **OpenAI Codex** and **DeepSeek Harness (DSH)**.
 
 [中文说明 / README.zh-CN](./README.zh-CN.md)
 
-This repository keeps reusable skill workflows in one place, then maps them into the formats each client understands.
+All skills deploy to the global skill hub at `~/.agents/skills`, which DSH reads
+directly and every Codex environment reaches through a symlink
+(`~/.codex/skills`, `~/.codex_xinta/.codex/skills`, `~/.codex_xuanzhi/.codex/skills`).
 
 ## What this repo contains
 
 - Codex-compatible skills under `skills/`
 - Shared workflow sources under `shared/`
-- Generated or maintained adapter files for Copilot CLI and VS Code Copilot under `adapters/`
-- Utility scripts for generation, sync, and installation under `scripts/`
+- Sync / import / install scripts under `scripts/`
 
-## Current skills
+## Current skills (33)
 
-- `context7-docs`
-- `gh-address-comments`
-- `gh-fix-ci`
-- `local-system-admin-context`
-- `project-skill-bootstrap`
-- `skillsmp-search`
-- `skill-repo-manager`
+`anachb`, `apple-mail`, `attack-tree-construction`, `audio-transcription`,
+`browser-act`, `chrome-cdp-browser-control`, `cloudflare`, `commit`,
+`context7-docs`, `frontend-design`, `gh-address-comments`, `gh-fix-ci`, `ghidra`,
+`github`, `google-workspace`, `librarian`, `local-system-admin-context`,
+`native-web-search`, `oebb-scotty`, `openscad`, `pi-share`, `ppt-creator`,
+`pptx`, `project-skill-bootstrap`, `send-notifications`, `sentry`,
+`skill-repo-manager`, `skillsmp-search`, `summarize`, `tmux`,
+`update-changelog`, `uv`, `web-browser`
 
 ## Repository model
 
-The repository uses a shared-first workflow:
-
-1. Put reusable workflow semantics in `shared/<skill-name>/`
-2. Keep Codex deployment files in `skills/<skill-name>/`
-3. Generate or maintain Copilot CLI files in `adapters/copilot-cli/<skill-name>/`
-4. Generate or maintain VS Code Copilot files in `adapters/vscode-copilot/<skill-name>/`
-5. Sync Codex skills into `~/.codex/skills/` only after reviewing changes
-
-This avoids treating one client's file format as the canonical source for every other client.
+1. Put reusable workflow semantics in `shared/<skill-name>/` (core.md + meta.json)
+2. Keep the deployment SKILL.md in `skills/<skill-name>/`
+3. Sync into the global hub with `scripts/sync_all.sh`
 
 ## Directory layout
 
 ```text
-skills/                    Codex skill folders
-shared/                    Shared workflow source files
-adapters/copilot-cli/      AGENTS.md and Copilot CLI instructions
-adapters/vscode-copilot/   VS Code Copilot instructions and prompt files
-scripts/                   Generator, installer, and sync tools
+skills/     Codex skill folders (SKILL.md + supporting files)
+shared/     Shared workflow source files
+scripts/    Import, install, and sync tools
 ```
 
-## Generate adapters
+## Sync into the hub
 
-Regenerate adapter files from the shared skill sources:
+Sync all skills into the global hub at `~/.agents/skills`:
 
 ```bash
-python scripts/generate_adapters.py --all
+./scripts/sync_all.sh
 ```
 
-Generate only one skill:
+Sync one skill, or all, into `~/.codex/skills` (a symlink to the hub):
 
 ```bash
-python scripts/generate_adapters.py context7-docs
-```
-
-The generator reads machine-readable metadata from `shared/<skill-name>/meta.json`.
-
-## Sync into Codex
-
-Sync one skill into `~/.codex/skills`:
-
-```bash
-./scripts/sync_codex_skill.sh context7-docs
-```
-
-Sync all tracked skills:
-
-```bash
+./scripts/sync_codex_skill.sh <skill-name>
 ./scripts/sync_codex_skill.sh --all
 ```
 
@@ -81,54 +60,32 @@ Force overwrite deployed copies after diff review:
 ./scripts/sync_codex_skill.sh --all --force
 ```
 
-## Install on a new machine
+## Import a new skill
 
-Clone or update the repository, then sync all Codex skills:
+Pull a skill that exists in the hub but not in the repo:
+
+```bash
+./scripts/import_from_codex.sh
+```
+
+Then review `shared/<skill-name>/meta.json`, regenerate nothing (no adapters are
+maintained anymore), and commit.
+
+## Install on a new machine
 
 ```bash
 ./scripts/install_codex_skills.sh
 ```
 
-You can also pass a custom repo URL or install directory:
+## Notes
 
-```bash
-./scripts/install_codex_skills.sh https://github.com/DavisYe/davis-llm-skill.git ~/project/davis-llm-skill
-```
-
-## Install VS Code Copilot files into a project
-
-Copy one skill's VS Code Copilot adapter into a target project:
-
-```bash
-./scripts/install_vscode_copilot_adapter.sh context7-docs ~/project/my-app
-```
-
-If the target already contains `.github` instruction files and you want this repository copy to win:
-
-```bash
-./scripts/install_vscode_copilot_adapter.sh context7-docs ~/project/my-app --force
-```
-
-## Cross-platform notes
-
-- Codex consumes `skills/<name>/`
-- Copilot CLI consumes instruction-oriented files such as `AGENTS.md`
-- VS Code Copilot consumes `.github/copilot-instructions.md`, scoped instruction files, and prompt files
-- `local-system-admin-context` is machine-specific and should not be copied to another machine without reviewing its baseline data
-
-## Contribution workflow
-
-1. Update the shared source when the skill has reusable semantics
-2. Update `shared/<skill-name>/meta.json` when adapter wording changes
-2. Regenerate adapters with `python scripts/generate_adapters.py --all`
-3. Update Codex-specific files if needed
-4. Sync to local Codex with `./scripts/sync_codex_skill.sh --all`
-5. Commit and push
-
-## CI
-
-GitHub Actions validates that generated adapter files are up to date by rerunning the generator and checking for diffs.
+- `local-system-admin-context` is machine-specific; review its
+  `references/local-environment.md` baseline before copying to another machine.
+- 19 skills (anachb … web-browser) are symlinked into the hub from the upstream
+  `mitsuhiko/agent-stuff` checkout and kept as imported snapshots here.
 
 ## License
 
-This repository includes files copied from `openai/skills` for some skills. Preserve their license files and review upstream licensing before redistributing modified copies.
+This repository includes files copied from `openai/skills` and
+`mitsuhiko/agent-stuff` for some skills. Preserve their license files and review
+upstream licensing before redistributing modified copies.

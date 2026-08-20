@@ -1,13 +1,4 @@
 {
   "title": "native-web-search",
-  "description": "\"Trigger native web search. Use when you need quick internet research with concise summaries and full source URLs.\"",
-  "claude_description": "\"Trigger native web search. Use when you need quick internet research with concise summaries and full source URLs.\"",
-  "copilot_cli_intro": "\"Trigger native web search. Use when you need quick internet research with concise summaries and full source URLs.\"",
-  "copilot_rules": [],
-  "vscode_intro": "\"Trigger native web search. Use when you need quick internet research with concise summaries and full source URLs.\"",
-  "vscode_rules": [],
-  "instruction_rules": [],
-  "prompt_title": "native-web-search Prompt",
-  "prompt_intro": "\"Trigger native web search. Use when you need quick internet research with concise summaries and full source URLs.\"",
-  "prompt_checklist": []
+  "description": "\"Trigger native web search. Use when you need quick internet research with concise summaries and full source URLs.\""
 }

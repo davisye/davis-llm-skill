@@ -1,5 +1,0 @@
-# github Prompt
-
-"Interact with GitHub using the `gh` CLI. Use `gh issue`, `gh pr`, `gh run`, and `gh api` for issues, PRs, CI runs, and advanced queries."
-
-Checklist:

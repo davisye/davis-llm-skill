@@ -9,14 +9,14 @@ usage() {
 Usage:
   sync_all.sh [--force]
 
-Three-way sync: regenerates all adapters and syncs skills to Codex, Claude Code,
-and Copilot adapters. Run after any change to shared/ or skills/.
+Sync: deploys the repository's Codex skills into the global skill hub at
+~/.agents/skills (via ~/.codex/skills symlink, so DSH and every Codex
+environment pick the changes up), then reports any hub skills missing from
+the repo. Run after any change to skills/ or shared/.
 
 Steps:
-  1. python scripts/generate_adapters.py --all
-  2. scripts/sync_codex_skill.sh --all [--force]
-  3. scripts/sync_claude_skill.sh --all [--force]
-  4. Reports any skills that exist in Codex or Claude but not in repo
+  1. scripts/sync_codex_skill.sh --all [--force]
+  2. Reports any skills that exist in the hub but not in the repo
 
 EOF
 }
@@ -44,28 +44,14 @@ if [[ "$FORCE" -eq 1 ]]; then
   FORCE_FLAG="--force"
 fi
 
-echo "=== Step 1/4: Generate adapters ==="
-python "$REPO_ROOT/scripts/generate_adapters.py" --all
-echo ""
-
-echo "=== Step 2/4: Sync to Codex ==="
+echo "=== Step 1/2: Sync to Codex (hub) ==="
 "$REPO_ROOT/scripts/sync_codex_skill.sh" --all $FORCE_FLAG
 echo ""
 
-echo "=== Step 3/4: Sync to Claude Code ==="
-"$REPO_ROOT/scripts/sync_claude_skill.sh" --all $FORCE_FLAG
-echo ""
-
-echo "=== Step 4/4: Check for external-only skills ==="
-echo ""
-echo "Codex-only skills:"
+echo "=== Step 2/2: Check for hub-only skills ==="
 "$REPO_ROOT/scripts/import_from_codex.sh" --dry-run 2>/dev/null || true
-echo ""
-echo "Claude-only skills:"
-"$REPO_ROOT/scripts/import_from_claude.sh" --dry-run 2>/dev/null || true
 echo ""
 
 echo "Sync complete. Active skills:"
-echo "  Codex:  $(ls "$HOME/.codex/skills/" 2>/dev/null | grep -v '^\.' | wc -l) skills"
-echo "  Claude: $(ls "$HOME/.claude/skills/" 2>/dev/null | grep -v '^\.' | wc -l) skills"
-echo "  Repo:   $(find "$REPO_ROOT/skills" -mindepth 1 -maxdepth 1 -type d | wc -l) skills"
+echo "  Codex hub (~/.agents/skills): $(ls "$HOME/.agents/skills/" 2>/dev/null | grep -v '^\.' | wc -l) skills"
+echo "  Repo: $(find "$REPO_ROOT/skills" -mindepth 1 -maxdepth 1 -type d | wc -l) skills"

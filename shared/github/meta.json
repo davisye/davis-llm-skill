@@ -1,13 +1,4 @@
 {
   "title": "github",
-  "description": "\"Interact with GitHub using the `gh` CLI. Use `gh issue`, `gh pr`, `gh run`, and `gh api` for issues, PRs, CI runs, and advanced queries.\"",
-  "claude_description": "\"Interact with GitHub using the `gh` CLI. Use `gh issue`, `gh pr`, `gh run`, and `gh api` for issues, PRs, CI runs, and advanced queries.\"",
-  "copilot_cli_intro": "\"Interact with GitHub using the `gh` CLI. Use `gh issue`, `gh pr`, `gh run`, and `gh api` for issues, PRs, CI runs, and advanced queries.\"",
-  "copilot_rules": [],
-  "vscode_intro": "\"Interact with GitHub using the `gh` CLI. Use `gh issue`, `gh pr`, `gh run`, and `gh api` for issues, PRs, CI runs, and advanced queries.\"",
-  "vscode_rules": [],
-  "instruction_rules": [],
-  "prompt_title": "github Prompt",
-  "prompt_intro": "\"Interact with GitHub using the `gh` CLI. Use `gh issue`, `gh pr`, `gh run`, and `gh api` for issues, PRs, CI runs, and advanced queries.\"",
-  "prompt_checklist": []
+  "description": "\"Interact with GitHub using the `gh` CLI. Use `gh issue`, `gh pr`, `gh run`, and `gh api` for issues, PRs, CI runs, and advanced queries.\""
 }

@@ -1,40 +1,4 @@
 {
   "title": "Project Skill Bootstrap",
-  "copilot_cli_intro": "Use this workflow when a repository needs a project-local skill layer generated from its detected framework and language stack.",
-  "copilot_rules": [
-    "Inspect the repository for stable stack signals before generating any files.",
-    "Generate only the domains the project actually uses.",
-    "Keep the root project SKILL.md as a router, not a full framework manual.",
-    "Write stack-specific guidance into .project-skills/*.md files.",
-    "Avoid overwriting existing project skill files unless the user explicitly requests replacement."
-  ],
-  "copilot_avoid": [
-    "Guessing frameworks without checking repository files",
-    "Generating every possible framework reference for a small project",
-    "Duplicating large framework documentation into the project skill"
-  ],
-  "vscode_intro": "Use this workflow to create a project-local skill bundle based on the repository's detected stack.",
-  "vscode_rules": [
-    "Detect stack signals from repository files before generating anything.",
-    "Create a root SKILL.md that routes work to local references.",
-    "Write focused framework references under .project-skills/.",
-    "Generate only the domains that fit the repository.",
-    "Avoid overwriting existing files without explicit approval."
-  ],
-  "instruction_rules": [
-    "Use the project-skill-bootstrap workflow when a repository needs local skill routing based on its actual stack.",
-    "Inspect the repository for stable stack signals first.",
-    "Generate a root SKILL.md plus .project-skills/*.md references.",
-    "Keep the root file lightweight and routing-oriented.",
-    "Avoid overwriting existing project skill files unless explicitly requested."
-  ],
-  "prompt_title": "Project Skill Bootstrap Prompt",
-  "prompt_intro": "Detect the repository stack, then generate a project-local skill router and focused stack references.",
-  "prompt_checklist": [
-    "Inspect stable repository files to infer the stack.",
-    "Select only the domains that fit the project.",
-    "Generate a routing-oriented root SKILL.md.",
-    "Generate focused .project-skills/*.md references.",
-    "Avoid overwriting existing files unless replacement is requested."
-  ]
+  "description": "Project Skill Bootstrap"
 }

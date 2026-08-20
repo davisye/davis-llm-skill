@@ -1,3 +1,0 @@
-# apple-mail Instructions
-
-"Search, read, and extract attachments from Apple Mail's local storage. Query emails by sender, recipient, subject, body, date, mailbox, and flags. Read raw RFC822 messages and extract file attachments."

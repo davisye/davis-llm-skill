@@ -1,13 +1,4 @@
 {
   "title": "apple-mail",
-  "description": "\"Search, read, and extract attachments from Apple Mail's local storage. Query emails by sender, recipient, subject, body, date, mailbox, and flags. Read raw RFC822 messages and extract file attachments.\"",
-  "claude_description": "\"Search, read, and extract attachments from Apple Mail's local storage. Query emails by sender, recipient, subject, body, date, mailbox, and flags. Read raw RFC822 messages and extract file attachments.\"",
-  "copilot_cli_intro": "\"Search, read, and extract attachments from Apple Mail's local storage. Query emails by sender, recipient, subject, body, date, mailbox, and flags. Read raw RFC822 messages and extract file attachments.\"",
-  "copilot_rules": [],
-  "vscode_intro": "\"Search, read, and extract attachments from Apple Mail's local storage. Query emails by sender, recipient, subject, body, date, mailbox, and flags. Read raw RFC822 messages and extract file attachments.\"",
-  "vscode_rules": [],
-  "instruction_rules": [],
-  "prompt_title": "apple-mail Prompt",
-  "prompt_intro": "\"Search, read, and extract attachments from Apple Mail's local storage. Query emails by sender, recipient, subject, body, date, mailbox, and flags. Read raw RFC822 messages and extract file attachments.\"",
-  "prompt_checklist": []
+  "description": "\"Search, read, and extract attachments from Apple Mail's local storage. Query emails by sender, recipient, subject, body, date, mailbox, and flags. Read raw RFC822 messages and extract file attachments.\""
 }

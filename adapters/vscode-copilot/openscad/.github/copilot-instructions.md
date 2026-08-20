@@ -1,3 +1,0 @@
-# Repository Instructions: openscad
-
-"Create and render OpenSCAD 3D models. Generate preview images from multiple angles, extract customizable parameters, validate syntax, and export STL files for 3D printing platforms like MakerWorld."

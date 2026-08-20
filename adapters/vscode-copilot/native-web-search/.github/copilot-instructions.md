@@ -1,3 +1,0 @@
-# Repository Instructions: native-web-search
-
-"Trigger native web search. Use when you need quick internet research with concise summaries and full source URLs."

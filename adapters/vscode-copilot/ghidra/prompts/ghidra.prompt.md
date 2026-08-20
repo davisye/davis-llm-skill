@@ -1,5 +1,0 @@
-# ghidra Prompt
-
-"Reverse engineer binaries using Ghidra's headless analyzer. Decompile executables, extract functions, strings, symbols, and analyze call graphs without GUI."
-
-Checklist:

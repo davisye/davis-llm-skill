@@ -85,16 +85,7 @@ while IFS= read -r codex_dir; do
     cat > "$shared_skill_dir/meta.json" <<METAEOF
 {
   "title": "$title",
-  "description": "$desc",
-  "claude_description": "$desc",
-  "copilot_cli_intro": "$desc",
-  "copilot_rules": [],
-  "vscode_intro": "$desc",
-  "vscode_rules": [],
-  "instruction_rules": [],
-  "prompt_title": "$title Prompt",
-  "prompt_intro": "$desc",
-  "prompt_checklist": []
+  "description": "$desc"
 }
 METAEOF
   fi

@@ -1,3 +1,0 @@
-# Repository Instructions: summarize
-
-"Fetch a URL or convert a local file (PDF/DOCX/HTML/etc.) into Markdown using `uvx markitdown`, optionally it can summarize"

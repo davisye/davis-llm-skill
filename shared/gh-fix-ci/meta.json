@@ -1,38 +1,4 @@
 {
   "title": "GH Fix CI",
-  "copilot_cli_intro": "Use this workflow when GitHub Actions checks on a PR are failing.",
-  "copilot_rules": [
-    "Verify `gh` authentication.",
-    "Resolve the target PR.",
-    "Inspect failing GitHub Actions checks and fetch logs.",
-    "Summarize the failure context with a short actionable snippet.",
-    "Propose a fix plan.",
-    "Wait for explicit approval before implementation."
-  ],
-  "vscode_intro": "Use the GitHub Actions triage workflow for failing PR checks.",
-  "vscode_rules": [
-    "Verify `gh` auth.",
-    "Resolve the PR.",
-    "Inspect failing checks and logs.",
-    "Summarize the failure snippet.",
-    "Propose a fix plan and wait for approval before implementing."
-  ],
-  "instruction_rules": [
-    "For failing GitHub Actions PR checks:",
-    "Verify `gh` authentication.",
-    "Inspect failing checks and logs.",
-    "Summarize the actionable failure.",
-    "Draft a plan.",
-    "Wait for explicit user approval before implementation."
-  ],
-  "prompt_title": "GH Fix CI Prompt",
-  "prompt_intro": "Debug failing GitHub Actions PR checks carefully.",
-  "prompt_checklist": [
-    "Verify `gh` authentication.",
-    "Resolve the PR.",
-    "Fetch failing checks and logs.",
-    "Summarize the actionable failure.",
-    "Propose a fix plan.",
-    "Implement only after approval."
-  ]
+  "description": "GH Fix CI"
 }

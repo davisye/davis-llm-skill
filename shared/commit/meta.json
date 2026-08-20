@@ -1,13 +1,4 @@
 {
   "title": "commit",
-  "description": "\"Read this skill before making git commits\"",
-  "claude_description": "\"Read this skill before making git commits\"",
-  "copilot_cli_intro": "\"Read this skill before making git commits\"",
-  "copilot_rules": [],
-  "vscode_intro": "\"Read this skill before making git commits\"",
-  "vscode_rules": [],
-  "instruction_rules": [],
-  "prompt_title": "commit Prompt",
-  "prompt_intro": "\"Read this skill before making git commits\"",
-  "prompt_checklist": []
+  "description": "\"Read this skill before making git commits\""
 }

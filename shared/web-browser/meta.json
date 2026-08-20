@@ -1,13 +1,4 @@
 {
   "title": "web-browser",
-  "description": "\"Automate and interact with web pages through Chrome or Chromium using the Chrome DevTools Protocol (CDP): navigate, click, fill forms, inspect content, take screenshots, and debug console or network activity. Use when an agent needs a real browser. Prefer headless Chrome unless visible browser interaction is required.\"",
-  "claude_description": "\"Automate and interact with web pages through Chrome or Chromium using the Chrome DevTools Protocol (CDP): navigate, click, fill forms, inspect content, take screenshots, and debug console or network activity. Use when an agent needs a real browser. Prefer headless Chrome unless visible browser interaction is required.\"",
-  "copilot_cli_intro": "\"Automate and interact with web pages through Chrome or Chromium using the Chrome DevTools Protocol (CDP): navigate, click, fill forms, inspect content, take screenshots, and debug console or network activity. Use when an agent needs a real browser. Prefer headless Chrome unless visible browser interaction is required.\"",
-  "copilot_rules": [],
-  "vscode_intro": "\"Automate and interact with web pages through Chrome or Chromium using the Chrome DevTools Protocol (CDP): navigate, click, fill forms, inspect content, take screenshots, and debug console or network activity. Use when an agent needs a real browser. Prefer headless Chrome unless visible browser interaction is required.\"",
-  "vscode_rules": [],
-  "instruction_rules": [],
-  "prompt_title": "web-browser Prompt",
-  "prompt_intro": "\"Automate and interact with web pages through Chrome or Chromium using the Chrome DevTools Protocol (CDP): navigate, click, fill forms, inspect content, take screenshots, and debug console or network activity. Use when an agent needs a real browser. Prefer headless Chrome unless visible browser interaction is required.\"",
-  "prompt_checklist": []
+  "description": "\"Automate and interact with web pages through Chrome or Chromium using the Chrome DevTools Protocol (CDP): navigate, click, fill forms, inspect content, take screenshots, and debug console or network activity. Use when an agent needs a real browser. Prefer headless Chrome unless visible browser interaction is required.\""
 }

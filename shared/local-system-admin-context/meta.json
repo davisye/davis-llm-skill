@@ -1,34 +1,4 @@
 {
   "title": "Local System Admin Context",
-  "copilot_cli_intro": "Use this workflow for changes to the current machine's stable software or configuration baseline.",
-  "copilot_rules": [
-    "Read the machine baseline first.",
-    "Verify actual system state with commands.",
-    "Apply the requested local change.",
-    "Update the stable baseline record if the machine baseline changed.",
-    "This workflow is machine-specific and should be reviewed before reuse on another host."
-  ],
-  "vscode_intro": "Use the local system admin workflow only for the current machine.",
-  "vscode_rules": [
-    "Read the baseline first.",
-    "Verify machine state with commands.",
-    "Update the baseline record after stable changes.",
-    "Treat the baseline as host-specific, not universally portable."
-  ],
-  "instruction_rules": [
-    "For local system configuration work:",
-    "Read the current machine baseline before acting.",
-    "Verify system state with commands.",
-    "Record stable baseline changes.",
-    "Avoid reusing host-specific baseline data blindly on other machines."
-  ],
-  "prompt_title": "Local System Admin Context Prompt",
-  "prompt_intro": "Handle local machine configuration carefully.",
-  "prompt_checklist": [
-    "Read the baseline.",
-    "Verify actual machine state.",
-    "Make the requested local change.",
-    "Update the baseline if the stable configuration changed.",
-    "Treat the baseline as host-specific."
-  ]
+  "description": "Local System Admin Context"
 }

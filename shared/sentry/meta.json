@@ -1,13 +1,4 @@
 {
   "title": "sentry",
-  "description": "\"Fetch and analyze Sentry issues, events, transactions, and logs. Helps agents debug errors, find root causes, and understand what happened at specific times.\"",
-  "claude_description": "\"Fetch and analyze Sentry issues, events, transactions, and logs. Helps agents debug errors, find root causes, and understand what happened at specific times.\"",
-  "copilot_cli_intro": "\"Fetch and analyze Sentry issues, events, transactions, and logs. Helps agents debug errors, find root causes, and understand what happened at specific times.\"",
-  "copilot_rules": [],
-  "vscode_intro": "\"Fetch and analyze Sentry issues, events, transactions, and logs. Helps agents debug errors, find root causes, and understand what happened at specific times.\"",
-  "vscode_rules": [],
-  "instruction_rules": [],
-  "prompt_title": "sentry Prompt",
-  "prompt_intro": "\"Fetch and analyze Sentry issues, events, transactions, and logs. Helps agents debug errors, find root causes, and understand what happened at specific times.\"",
-  "prompt_checklist": []
+  "description": "\"Fetch and analyze Sentry issues, events, transactions, and logs. Helps agents debug errors, find root causes, and understand what happened at specific times.\""
 }
