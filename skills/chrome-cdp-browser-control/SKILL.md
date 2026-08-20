@@ -1,6 +1,6 @@
 ---
 name: chrome-cdp-browser-control
-description: Use when the user wants Codex to start, attach to, or operate a locally visible Chrome browser through Chrome DevTools Protocol (CDP) and Playwright. Trigger for requests such as "use my browser", "open this page in the controllable Chrome", "attach to Chrome over CDP", or "operate the GUI Chrome you can see".
+description: Use when the user wants Codex to start, attach to, or operate a locally visible Chrome browser through Chrome DevTools Protocol (CDP) and Playwright. Trigger for requests such as "use my browser", "open this page in the controllable Chrome", "attach to Chrome over CDP", or "operate the GUI Chrome you can see". For headless automation, web scraping, or fetching rendered pages, use browser-act instead.
 ---
 
 # Chrome CDP Browser Control

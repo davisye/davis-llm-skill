@@ -9,8 +9,6 @@ metadata:
 
 Guide to find the open PR for the current branch and address its comments with gh CLI. Run all `gh` commands with elevated network access.
 
-This Codex skill is the deployed format for the shared repository workflow defined in `/home/davisye/project/davis-llm-skill/shared/gh-address-comments/core.md`. Keep the semantics aligned with the shared source and the Copilot adapters.
-
 Prereq: ensure `gh` is authenticated (for example, run `gh auth login` once), then run `gh auth status` with escalated permissions (include workflow/repo scopes) so `gh` commands succeed. If sandboxing blocks `gh auth status`, rerun it with `sandbox_permissions=require_escalated`.
 
 ## 1) Inspect comments needing attention

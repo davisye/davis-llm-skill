@@ -44,7 +44,7 @@ When adding or updating a skill:
 1. Update the shared source under `shared/<skill-name>/` (core.md + meta.json).
 2. Update the deployment skill under `skills/<skill-name>/` (SKILL.md + supporting files).
 3. Sync to the hub with `scripts/sync_all.sh` (or `scripts/sync_codex_skill.sh <name>`).
-4. If the skill is one of the 19 symlinked from upstream `mitsuhiko/agent-stuff`,
+4. If the skill is one of the 16 symlinked from upstream `mitsuhiko/agent-stuff`,
    refresh the imported snapshot in the repo after upstream changes.
 
 ## New Skill Import

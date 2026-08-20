@@ -14,16 +14,16 @@ directly and every Codex environment reaches through a symlink
 - Shared workflow sources under `shared/`
 - Sync / import / install scripts under `scripts/`
 
-## Current skills (33)
+## Current skills (30)
 
-`anachb`, `apple-mail`, `attack-tree-construction`, `audio-transcription`,
+`apple-mail`, `attack-tree-construction`, `audio-transcription`,
 `browser-act`, `chrome-cdp-browser-control`, `cloudflare`, `commit`,
 `context7-docs`, `frontend-design`, `gh-address-comments`, `gh-fix-ci`, `ghidra`,
 `github`, `google-workspace`, `librarian`, `local-system-admin-context`,
-`native-web-search`, `oebb-scotty`, `openscad`, `pi-share`, `ppt-creator`,
+`native-web-search`, `openscad`, `pi-share`, `ppt-creator`,
 `pptx`, `project-skill-bootstrap`, `send-notifications`, `sentry`,
 `skill-repo-manager`, `skillsmp-search`, `summarize`, `tmux`,
-`update-changelog`, `uv`, `web-browser`
+`update-changelog`, `uv`
 
 ## Repository model
 
@@ -81,7 +81,7 @@ maintained anymore), and commit.
 
 - `local-system-admin-context` is machine-specific; review its
   `references/local-environment.md` baseline before copying to another machine.
-- 19 skills (anachb … web-browser) are symlinked into the hub from the upstream
+- 16 skills (apple-mail … uv) are symlinked into the hub from the upstream
   `mitsuhiko/agent-stuff` checkout and kept as imported snapshots here.
 
 ## License

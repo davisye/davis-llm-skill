@@ -1,4 +1,4 @@
 {
   "title": "Chrome CDP Browser Control",
-  "description": "Use when the user wants to start, attach to, or operate a locally visible Chrome browser through Chrome DevTools Protocol (CDP) and Playwright."
+  "description": "Use when the user wants to start, attach to, or operate a locally visible Chrome browser through Chrome DevTools Protocol (CDP) and Playwright. For headless automation, web scraping, or fetching rendered pages, use browser-act instead."
 }

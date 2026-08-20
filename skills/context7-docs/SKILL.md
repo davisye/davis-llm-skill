@@ -7,8 +7,6 @@ description: Use when a task needs current, version-specific library or framewor
 
 Use this skill when the answer depends on up-to-date library docs instead of model memory. Favor Context7 over guesswork for framework APIs, versioned behavior, migrations, and example code.
 
-This Codex skill is the deployed format for the shared repository workflow defined in `/home/davisye/project/davis-llm-skill/shared/context7-docs/core.md`. Keep the semantics aligned with the shared source and the Copilot adapters.
-
 ## Workflow
 
 1. Identify the target library and whether the user already provided a Context7 library ID such as `/vercel/next.js` or `/facebook/react/v19.2.0`.

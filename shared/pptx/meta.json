@@ -1,4 +1,4 @@
 {
   "title": "PPTX",
-  "description": "Presentation creation, editing, and analysis. Use when working with .pptx files for creating new presentations, modifying content, working with layouts, or adding comments and speaker notes."
+  "description": "Presentation creation, editing, and analysis. Use when working with .pptx files for creating new presentations, modifying content, working with layouts, or adding comments and speaker notes. For content-first deck creation with storytelling, use ppt-creator instead; this skill is for file-level creation, editing, and analysis."
 }

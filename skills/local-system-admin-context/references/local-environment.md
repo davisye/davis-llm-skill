@@ -34,7 +34,7 @@
 - Codex：全局 skill `~/.codex/skills/context7-docs` 已创建，用于规范 Context7 的库 ID 解析、版本选择和窄查询写法
 - Codex：已全局安装官方 `gh-address-comments` 与 `gh-fix-ci` skills，分别用于处理 GitHub PR 评论和排查 GitHub Actions 检查失败
 - Bun：`bun 1.3.14` 已安装；fish 的持久 PATH 包含 `~/.cache/.bun/bin`，全局 `@redocly/cli 2.40.0` 提供 `redocly` 与 `openapi`，用于 OpenAPI 3.1 契约校验
-- DeepSeek Harness：用户级 `dsh-web.service` 启用后在 `127.0.0.1:3080` 提供 Web UI，工作目录为 `~/opt/dsh-deploy`。`~/.dsh/profiles/web` 的 Codex provider 由 `@deepseek-ai/dsh-subagent-codex` bundle 注册；本地 `cordis.patch.yml` 只能用 `id: subagent-codex` 覆盖其 `HOME=~/.codex_xinta`，不可再次 `insert` 同 ID。
+- DeepSeek Harness：用户级 `dsh-web.service` 启用后在 `127.0.0.1:3080` 提供 Web UI，工作目录为 `~/opt/dsh-deploy`。`~/.dsh/profiles/web` 的 Codex provider 由 `@deepseek-ai/dsh-subagent-codex` bundle 注册；本地 `cordis.patch.yml` 只能用 `id: subagent-codex` 覆盖其 `HOME=~/.codex_xinta`，不可再次 `insert` 同 ID。`dsh-im-gateway` 的 `allowedUserIds.telegram` 条目必须加引号写为字符串，避免 YAML 解析成数字而导致启动校验失败。
 - 用户级知识库挂载：`rclone-pan-webdav.service` 将 Cloudflare R2 bucket `kb:davis-kb` 挂到 `~/mnt/knowledge-base`，避免直接占用家目录下的 `~/knowledge-base`
 - Neovim：`~/.local/share/nvim/mason` 里已安装的常用工具包括 `stylua`、`bash-language-server`、`shellcheck`、`shfmt`、`marksman`、`yaml-language-server`、`taplo`、`debugpy`、`delve`、`eslint-lsp`、`tailwindcss-language-server`、`emmet-language-server`、`json-lsp`、`dockerfile-language-server`、`docker-compose-language-service`
 - MATLAB：`~/.local/bin/matlab` wrapper 已固定 `QT_QPA_PLATFORM=xcb` 并 `unset WAYLAND_DISPLAY`，用于在 Wayland(niri) 下确保账号登录窗口可启动（走 X11/xcb）

@@ -14,16 +14,16 @@
 - `shared/`：可复用的共享工作流源（core.md + meta.json）
 - `scripts/`：导入、安装、同步工具
 
-## 当前包含的 skill（33 个）
+## 当前包含的 skill（30 个）
 
-`anachb`、`apple-mail`、`attack-tree-construction`、`audio-transcription`、
+`apple-mail`、`attack-tree-construction`、`audio-transcription`、
 `browser-act`、`chrome-cdp-browser-control`、`cloudflare`、`commit`、
 `context7-docs`、`frontend-design`、`gh-address-comments`、`gh-fix-ci`、`ghidra`、
 `github`、`google-workspace`、`librarian`、`local-system-admin-context`、
-`native-web-search`、`oebb-scotty`、`openscad`、`pi-share`、`ppt-creator`、
+`native-web-search`、`openscad`、`pi-share`、`ppt-creator`、
 `pptx`、`project-skill-bootstrap`、`send-notifications`、`sentry`、
 `skill-repo-manager`、`skillsmp-search`、`summarize`、`tmux`、
-`update-changelog`、`uv`、`web-browser`
+`update-changelog`、`uv`
 
 ## 仓库模型
 
@@ -80,7 +80,7 @@ scripts/    导入、安装、同步工具
 
 - `local-system-admin-context` 带有机器相关内容，迁移到其他机器前应先审查其
   `references/local-environment.md` baseline
-- 19 个 skill（anachb … web-browser）在 hub 中是指向上游 `mitsuhiko/agent-stuff`
+- 16 个 skill（apple-mail … uv）在 hub 中是指向上游 `mitsuhiko/agent-stuff`
   checkout 的符号链接，本仓库保留其导入快照
 
 ## 许可证
