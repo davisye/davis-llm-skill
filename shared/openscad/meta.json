@@ -1,0 +1,13 @@
+{
+  "title": "openscad",
+  "description": "\"Create and render OpenSCAD 3D models. Generate preview images from multiple angles, extract customizable parameters, validate syntax, and export STL files for 3D printing platforms like MakerWorld.\"",
+  "claude_description": "\"Create and render OpenSCAD 3D models. Generate preview images from multiple angles, extract customizable parameters, validate syntax, and export STL files for 3D printing platforms like MakerWorld.\"",
+  "copilot_cli_intro": "\"Create and render OpenSCAD 3D models. Generate preview images from multiple angles, extract customizable parameters, validate syntax, and export STL files for 3D printing platforms like MakerWorld.\"",
+  "copilot_rules": [],
+  "vscode_intro": "\"Create and render OpenSCAD 3D models. Generate preview images from multiple angles, extract customizable parameters, validate syntax, and export STL files for 3D printing platforms like MakerWorld.\"",
+  "vscode_rules": [],
+  "instruction_rules": [],
+  "prompt_title": "openscad Prompt",
+  "prompt_intro": "\"Create and render OpenSCAD 3D models. Generate preview images from multiple angles, extract customizable parameters, validate syntax, and export STL files for 3D printing platforms like MakerWorld.\"",
+  "prompt_checklist": []
+}

@@ -89,15 +89,16 @@ def generate(skill: str) -> None:
 {bullet_list(meta['vscode_rules'])}
 """
 
+    instruction_rules = meta.get("instruction_rules") or []
     scoped_instructions = textwrap.dedent(
         f"""\
         ---
         applyTo: "**"
         ---
 
-        {meta['instruction_rules'][0]}
+        {instruction_rules[0] if instruction_rules else ""}
 
-        {bullet_list(meta['instruction_rules'][1:])}
+        {bullet_list(instruction_rules[1:])}
         """
     )
 

@@ -1,0 +1,13 @@
+{
+  "title": "send-notifications",
+  "description": "Use when sending or diagnosing local niri desktop, email, Telegram, or multi-channel notifications through this machine's private systemd notification service.",
+  "claude_description": "Use when sending or diagnosing local niri desktop, email, Telegram, or multi-channel notifications through this machine's private systemd notification service.",
+  "copilot_cli_intro": "Use when sending or diagnosing local niri desktop, email, Telegram, or multi-channel notifications through this machine's private systemd notification service.",
+  "copilot_rules": [],
+  "vscode_intro": "Use when sending or diagnosing local niri desktop, email, Telegram, or multi-channel notifications through this machine's private systemd notification service.",
+  "vscode_rules": [],
+  "instruction_rules": [],
+  "prompt_title": "send-notifications Prompt",
+  "prompt_intro": "Use when sending or diagnosing local niri desktop, email, Telegram, or multi-channel notifications through this machine's private systemd notification service.",
+  "prompt_checklist": []
+}

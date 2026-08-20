@@ -1,0 +1,4 @@
+interface:
+  display_name: "Send Notifications"
+  short_description: "Send niri, email, and Telegram notifications safely."
+  default_prompt: "Use $send-notifications to deliver this update through the appropriate local channels."

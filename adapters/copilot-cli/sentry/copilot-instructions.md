@@ -1,0 +1,3 @@
+# sentry Instructions
+
+"Fetch and analyze Sentry issues, events, transactions, and logs. Helps agents debug errors, find root causes, and understand what happened at specific times."

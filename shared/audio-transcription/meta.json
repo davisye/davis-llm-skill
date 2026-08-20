@@ -1,0 +1,13 @@
+{
+  "title": "audio-transcription",
+  "description": "\"Transcribe local audio/video and Apple Voice Memos quickly with cached MLX Whisper models, including bad/low-quality audio.\"",
+  "claude_description": "\"Transcribe local audio/video and Apple Voice Memos quickly with cached MLX Whisper models, including bad/low-quality audio.\"",
+  "copilot_cli_intro": "\"Transcribe local audio/video and Apple Voice Memos quickly with cached MLX Whisper models, including bad/low-quality audio.\"",
+  "copilot_rules": [],
+  "vscode_intro": "\"Transcribe local audio/video and Apple Voice Memos quickly with cached MLX Whisper models, including bad/low-quality audio.\"",
+  "vscode_rules": [],
+  "instruction_rules": [],
+  "prompt_title": "audio-transcription Prompt",
+  "prompt_intro": "\"Transcribe local audio/video and Apple Voice Memos quickly with cached MLX Whisper models, including bad/low-quality audio.\"",
+  "prompt_checklist": []
+}

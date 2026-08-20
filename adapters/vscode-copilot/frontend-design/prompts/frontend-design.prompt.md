@@ -1,0 +1,5 @@
+# frontend-design Prompt
+
+"Design and implement distinctive, production-ready frontend interfaces with strong aesthetic direction. Use when asked to create or restyle web pages, components, or applications (HTML/CSS/JS, React, Vue, etc.)."
+
+Checklist:

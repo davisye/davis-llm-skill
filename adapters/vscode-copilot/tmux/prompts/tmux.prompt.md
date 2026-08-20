@@ -1,0 +1,5 @@
+# tmux Prompt
+
+"Remote control tmux sessions for interactive CLIs (python, gdb, etc.) by sending keystrokes and scraping pane output."
+
+Checklist:

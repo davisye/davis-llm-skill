@@ -1,0 +1,13 @@
+{
+  "title": "ghidra",
+  "description": "\"Reverse engineer binaries using Ghidra's headless analyzer. Decompile executables, extract functions, strings, symbols, and analyze call graphs without GUI.\"",
+  "claude_description": "\"Reverse engineer binaries using Ghidra's headless analyzer. Decompile executables, extract functions, strings, symbols, and analyze call graphs without GUI.\"",
+  "copilot_cli_intro": "\"Reverse engineer binaries using Ghidra's headless analyzer. Decompile executables, extract functions, strings, symbols, and analyze call graphs without GUI.\"",
+  "copilot_rules": [],
+  "vscode_intro": "\"Reverse engineer binaries using Ghidra's headless analyzer. Decompile executables, extract functions, strings, symbols, and analyze call graphs without GUI.\"",
+  "vscode_rules": [],
+  "instruction_rules": [],
+  "prompt_title": "ghidra Prompt",
+  "prompt_intro": "\"Reverse engineer binaries using Ghidra's headless analyzer. Decompile executables, extract functions, strings, symbols, and analyze call graphs without GUI.\"",
+  "prompt_checklist": []
+}

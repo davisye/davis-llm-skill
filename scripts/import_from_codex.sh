@@ -68,17 +68,18 @@ while IFS= read -r codex_dir; do
     shared_skill_dir="$SHARED_DIR/$name"
     mkdir -p "$shared_skill_dir"
 
-    # Extract body (skip frontmatter between --- markers)
+    # Extract body (skip frontmatter between --- markers); normalize CRLF
     awk '
       BEGIN { skip=0; found=0 }
-      /^---$/ { found++; next }
-      found >= 2 { print }
+      /^---\r?$/ { found++; next }
+      found >= 2 { sub(/\r$/, ""); print }
       found == 1 { skip=1 }
     ' "$repo_skill_dir/SKILL.md" > "$shared_skill_dir/core.md"
 
-    # Extract description from frontmatter for meta.json
-    desc=$(awk '/^description:/ { sub(/^description: */, ""); gsub(/"/, "\\\""); print; exit }' "$repo_skill_dir/SKILL.md")
-    title=$(awk '/^name:/ { sub(/^name: */, ""); print; exit }' "$repo_skill_dir/SKILL.md")
+    # Extract description from frontmatter for meta.json (strip CRLF and
+    # surrounding quotes so the value embeds cleanly in JSON)
+    desc=$(awk '/^description:/ { sub(/^description: */, ""); sub(/\r$/, ""); sub(/^"/, ""); sub(/"$/, ""); gsub(/"/, "\\\""); print; exit }' "$repo_skill_dir/SKILL.md")
+    title=$(awk '/^name:/ { sub(/^name: */, ""); sub(/\r$/, ""); print; exit }' "$repo_skill_dir/SKILL.md")
     [[ -z "$desc" ]] && desc="$title"
 
     cat > "$shared_skill_dir/meta.json" <<METAEOF
@@ -100,7 +101,7 @@ METAEOF
 
   echo "  -> Imported to $repo_skill_dir"
   imported=1
-done < <(find "$CODEX_SKILLS" -mindepth 1 -maxdepth 1 -type d | sort)
+done < <(find -L "$CODEX_SKILLS" -mindepth 1 -maxdepth 1 -type d | sort)
 
 if [[ "$imported" -eq 0 ]]; then
   echo "No new skills found in Codex."

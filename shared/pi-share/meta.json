@@ -1,0 +1,13 @@
+{
+  "title": "pi-share",
+  "description": "\"Load and parse session transcripts from shittycodingagent.ai/buildwithpi.ai/buildwithpi.com/pi.dev (pi-share) URLs. Fetches gists, decodes embedded session data, and extracts conversation history.\"",
+  "claude_description": "\"Load and parse session transcripts from shittycodingagent.ai/buildwithpi.ai/buildwithpi.com/pi.dev (pi-share) URLs. Fetches gists, decodes embedded session data, and extracts conversation history.\"",
+  "copilot_cli_intro": "\"Load and parse session transcripts from shittycodingagent.ai/buildwithpi.ai/buildwithpi.com/pi.dev (pi-share) URLs. Fetches gists, decodes embedded session data, and extracts conversation history.\"",
+  "copilot_rules": [],
+  "vscode_intro": "\"Load and parse session transcripts from shittycodingagent.ai/buildwithpi.ai/buildwithpi.com/pi.dev (pi-share) URLs. Fetches gists, decodes embedded session data, and extracts conversation history.\"",
+  "vscode_rules": [],
+  "instruction_rules": [],
+  "prompt_title": "pi-share Prompt",
+  "prompt_intro": "\"Load and parse session transcripts from shittycodingagent.ai/buildwithpi.ai/buildwithpi.com/pi.dev (pi-share) URLs. Fetches gists, decodes embedded session data, and extracts conversation history.\"",
+  "prompt_checklist": []
+}

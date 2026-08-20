@@ -1,0 +1,13 @@
+{
+  "title": "tmux",
+  "description": "\"Remote control tmux sessions for interactive CLIs (python, gdb, etc.) by sending keystrokes and scraping pane output.\"",
+  "claude_description": "\"Remote control tmux sessions for interactive CLIs (python, gdb, etc.) by sending keystrokes and scraping pane output.\"",
+  "copilot_cli_intro": "\"Remote control tmux sessions for interactive CLIs (python, gdb, etc.) by sending keystrokes and scraping pane output.\"",
+  "copilot_rules": [],
+  "vscode_intro": "\"Remote control tmux sessions for interactive CLIs (python, gdb, etc.) by sending keystrokes and scraping pane output.\"",
+  "vscode_rules": [],
+  "instruction_rules": [],
+  "prompt_title": "tmux Prompt",
+  "prompt_intro": "\"Remote control tmux sessions for interactive CLIs (python, gdb, etc.) by sending keystrokes and scraping pane output.\"",
+  "prompt_checklist": []
+}

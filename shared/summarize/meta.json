@@ -1,0 +1,13 @@
+{
+  "title": "summarize",
+  "description": "\"Fetch a URL or convert a local file (PDF/DOCX/HTML/etc.) into Markdown using `uvx markitdown`, optionally it can summarize\"",
+  "claude_description": "\"Fetch a URL or convert a local file (PDF/DOCX/HTML/etc.) into Markdown using `uvx markitdown`, optionally it can summarize\"",
+  "copilot_cli_intro": "\"Fetch a URL or convert a local file (PDF/DOCX/HTML/etc.) into Markdown using `uvx markitdown`, optionally it can summarize\"",
+  "copilot_rules": [],
+  "vscode_intro": "\"Fetch a URL or convert a local file (PDF/DOCX/HTML/etc.) into Markdown using `uvx markitdown`, optionally it can summarize\"",
+  "vscode_rules": [],
+  "instruction_rules": [],
+  "prompt_title": "summarize Prompt",
+  "prompt_intro": "\"Fetch a URL or convert a local file (PDF/DOCX/HTML/etc.) into Markdown using `uvx markitdown`, optionally it can summarize\"",
+  "prompt_checklist": []
+}

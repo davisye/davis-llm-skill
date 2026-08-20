@@ -1,0 +1,13 @@
+{
+  "title": "update-changelog",
+  "description": "\"Read this skill before updating changelogs\"",
+  "claude_description": "\"Read this skill before updating changelogs\"",
+  "copilot_cli_intro": "\"Read this skill before updating changelogs\"",
+  "copilot_rules": [],
+  "vscode_intro": "\"Read this skill before updating changelogs\"",
+  "vscode_rules": [],
+  "instruction_rules": [],
+  "prompt_title": "update-changelog Prompt",
+  "prompt_intro": "\"Read this skill before updating changelogs\"",
+  "prompt_checklist": []
+}
