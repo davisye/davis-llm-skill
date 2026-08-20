@@ -1,0 +1,41 @@
+{
+  "title": "Chrome CDP Browser Control",
+  "description": "Use when the user wants to start, attach to, or operate a locally visible Chrome browser through Chrome DevTools Protocol (CDP) and Playwright.",
+  "claude_description": "This skill should be used when the user asks to control a browser, open a page in Chrome, use CDP, operate a GUI Chrome, or automate browser interactions via DevTools Protocol. Trigger for requests such as \"use my browser\", \"open this page in the controllable Chrome\", \"attach to Chrome over CDP\", or \"operate the GUI Chrome you can see\".",
+  "claude_allowed_tools": ["Read", "Bash", "Write"],
+  "copilot_cli_intro": "Control a local GUI Chrome instance through the Chrome DevTools Protocol and Playwright.",
+  "copilot_rules": [
+    "Use the existing project at /home/davisye/workspace/chrome-cdp-control.",
+    "Prefer the separate controllable Chrome over the user's existing browser.",
+    "Keep automation isolated in ~/.cache/chrome-cdp-control.",
+    "Verify control with concrete checks like listing tabs or printing page URLs.",
+    "Do not claim control of pre-existing Chrome windows without CDP enabled."
+  ],
+  "copilot_avoid": [
+    "Creating duplicate browser-control projects",
+    "Attaching to user's normal Chrome without CDP enabled",
+    "Making broad system changes when CDP connection fails"
+  ],
+  "vscode_intro": "Control a local GUI Chrome instance through Chrome DevTools Protocol.",
+  "vscode_rules": [
+    "Use the configured CDP Chrome project.",
+    "Launch separate controllable Chrome for automation.",
+    "Verify connections with concrete checks.",
+    "Isolate browser automation to dedicated profiles."
+  ],
+  "instruction_rules": [
+    "Use the local CDP Chrome setup at /home/davisye/workspace/chrome-cdp-control.",
+    "Start Chrome with --remote-debugging-port=9222.",
+    "Connect via Playwright and verify control.",
+    "Keep automation isolated to the dedicated Chrome profile."
+  ],
+  "prompt_title": "Chrome CDP Browser Control Prompt",
+  "prompt_intro": "Control a locally visible Chrome browser through CDP. Start, connect, and operate a dedicated Chrome instance for automation tasks.",
+  "prompt_checklist": [
+    "Confirm browser choice with user.",
+    "Launch controllable Chrome with CDP enabled.",
+    "Verify connection by listing tabs.",
+    "Execute requested browser operations.",
+    "Keep automation isolated."
+  ]
+}

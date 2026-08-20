@@ -1,0 +1,7 @@
+interface:
+  display_name: "Chrome CDP Browser Control"
+  short_description: "启动并操作本机可控 Chrome，会话基于 CDP 和 Playwright"
+  default_prompt: "Use $chrome-cdp-browser-control to start or control the local CDP-enabled Chrome browser on this machine."
+
+policy:
+  allow_implicit_invocation: true

@@ -7,7 +7,7 @@
 - 主机名：`davisarch`
 - 用户名：`davisye`
 - 发行版：`Arch Linux x86_64`
-- 内核：`Linux 6.19.9-arch1-1`
+- 内核：`Linux 6.19.11-arch1-1`
 - 图形会话：`Wayland`
 - 窗口管理器 / 合成器：`niri 25.11`
 - 终端：`kitty 0.46.2`
@@ -18,9 +18,13 @@
 - VS Code：通过 `argv.json` 固定使用 `gnome-libsecret` 作为密码存储后端
 - v2rayA：通过 `/etc/systemd/system/v2raya.service.d/xray.conf` 固定使用 `xray` 核心，路径为 `/usr/sbin/xray`
 - 通知守护进程：用户级 `mako.service` 已被 mask；Wayland 会话中不要默认按 `mako` 仍在接管通知来判断
+- ThinkPad 电源档：`thinkpad_acpi` 已加载，但 `fan_control=N`，风扇主要由固件自动管理；当前没有 `thinkfan` 或 `fancontrol` 的独立风扇曲线配置
+- 电源档自动切换：`/etc/systemd/system/power-profile-auto.service` 搭配 `/etc/udev/rules.d/99-power-profile-auto.rules`，插电时倾向切到 `balanced`，电池供电时切到 `power-saver`
+- 电源管理：已安装 `power-profiles-daemon`，`tlp` 未安装
 - Codex：`~/.codex/config.toml` 已配置 `context7` 远程 MCP，服务地址为 `https://mcp.context7.com/mcp`
 - Codex：全局 skill `~/.codex/skills/context7-docs` 已创建，用于规范 Context7 的库 ID 解析、版本选择和窄查询写法
 - Codex：已全局安装官方 `gh-address-comments` 与 `gh-fix-ci` skills，分别用于处理 GitHub PR 评论和排查 GitHub Actions 检查失败
+- niri：已在 `~/.config/niri/binds.kdl` 增加自定义启动键，`Mod+D` 打开 DeepSeek PWA，`Mod+Shift+D` 打开豆包 PWA
 
 ## 处理约定
 

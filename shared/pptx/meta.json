@@ -1,0 +1,43 @@
+{
+  "title": "PPTX",
+  "description": "Presentation creation, editing, and analysis. Use when working with .pptx files for creating new presentations, modifying content, working with layouts, or adding comments and speaker notes.",
+  "claude_description": "This skill should be used when the user asks to create PowerPoint presentations, edit .pptx files, modify slides, work with PPTX layouts, add speaker notes, or analyze presentation content. Use for any .pptx file operations.",
+  "claude_allowed_tools": ["Read", "Write", "Bash"],
+  "copilot_cli_intro": "Create, edit, and analyze PowerPoint (.pptx) files. Support html2pptx workflow for new presentations, OOXML editing for existing ones, and template-based creation.",
+  "copilot_rules": [
+    "Use html2pptx workflow for creating new presentations from scratch.",
+    "Use OOXML unpack/edit/validate/pack workflow for editing existing presentations.",
+    "Use template duplication and replacement workflow for template-based creation.",
+    "Always validate after editing OOXML before packing.",
+    "Create visual thumbnails for template analysis."
+  ],
+  "copilot_avoid": [
+    "Editing OOXML without validation",
+    "Creating presentations without analyzing content first",
+    "Using template layouts that don't match actual content",
+    "Skipping visual validation after creation"
+  ],
+  "vscode_intro": "Create, edit, and analyze PowerPoint (.pptx) files with multiple workflows for different creation scenarios.",
+  "vscode_rules": [
+    "Choose the right workflow: html2pptx (new), OOXML (edit), or template-based.",
+    "Always run validation after OOXML edits.",
+    "Use visual thumbnails for quality inspection.",
+    "Match layout structure to actual content."
+  ],
+  "instruction_rules": [
+    "Create new presentations using html2pptx workflow.",
+    "Edit existing presentations using OOXML unpack/edit/validate/pack.",
+    "Create from templates using duplicate/rearrange/replace workflow.",
+    "Always validate XML after editing.",
+    "Generate thumbnails for visual verification."
+  ],
+  "prompt_title": "PPTX Prompt",
+  "prompt_intro": "Create, edit, or analyze PowerPoint (.pptx) files. Choose the appropriate workflow based on the task.",
+  "prompt_checklist": [
+    "Determine the right workflow (new/edit/template).",
+    "Read relevant reference documentation.",
+    "Implement the presentation changes.",
+    "Validate output.",
+    "Generate thumbnails for visual check."
+  ]
+}

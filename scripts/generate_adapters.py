@@ -10,6 +10,7 @@ import textwrap
 REPO_ROOT = Path(__file__).resolve().parent.parent
 SHARED_ROOT = REPO_ROOT / "shared"
 ADAPTERS_ROOT = REPO_ROOT / "adapters"
+CLAUDE_ROOT = ADAPTERS_ROOT / "claude"
 
 
 def bullet_list(items: list[str]) -> str:
@@ -39,8 +40,28 @@ def available_skills() -> list[str]:
     )
 
 
+def generate_claude(skill: str, meta: dict, core_content: str) -> None:
+    claude_dir = CLAUDE_ROOT / skill
+    description = meta.get("claude_description") or meta.get("description") or meta.get("title") or skill
+    allowed_tools = meta.get("claude_allowed_tools")
+    tools_line = f"\nallowed-tools: [{', '.join(allowed_tools)}]" if allowed_tools else ""
+
+    frontmatter = f"""---
+name: {skill}
+description: {description}{tools_line}
+---
+
+"""
+
+    write(claude_dir / "SKILL.md", frontmatter + core_content)
+
+
 def generate(skill: str) -> None:
     meta = load_meta(skill)
+    core_path = SHARED_ROOT / skill / "core.md"
+    core_content = core_path.read_text(encoding="utf-8") if core_path.exists() else ""
+
+    generate_claude(skill, meta, core_content)
 
     copilot_dir = ADAPTERS_ROOT / "copilot-cli" / skill
     vscode_dir = ADAPTERS_ROOT / "vscode-copilot" / skill

@@ -1,0 +1,43 @@
+{
+  "title": "Attack Tree Construction",
+  "description": "Build comprehensive attack trees to visualize threat paths. Use when mapping attack scenarios, identifying defense gaps, or communicating security risks to stakeholders.",
+  "claude_description": "This skill should be used when the user asks to build attack trees, visualize threat paths, map attack scenarios, analyze security risks, or communicate security threats. Use for penetration test planning and security architecture review.",
+  "claude_allowed_tools": ["Read", "Write", "Bash"],
+  "copilot_cli_intro": "Build comprehensive attack trees to visualize threat paths and analyze security scenarios.",
+  "copilot_rules": [
+    "Start with clear root goals before building sub-goals.",
+    "Use OR nodes when any child achieves the parent goal, AND nodes when all children are required.",
+    "Attribute each leaf attack with cost, time, skill, and detection risk.",
+    "Generate mitigations for identified attack paths.",
+    "Prioritize mitigations by coverage impact."
+  ],
+  "copilot_avoid": [
+    "Oversimplifying real attack scenarios",
+    "Ignoring dependency relationships between attacks",
+    "Forgetting insider threats",
+    "Skipping mitigation analysis"
+  ],
+  "vscode_intro": "Build and analyze attack trees for threat modeling and security assessment.",
+  "vscode_rules": [
+    "Define clear root goals first.",
+    "Use proper node types (OR/AND/Leaf).",
+    "Attribute all leaf nodes.",
+    "Provide mitigation recommendations.",
+    "Update trees as threat landscape evolves."
+  ],
+  "instruction_rules": [
+    "Build attack trees systematically from root goals to leaf attacks.",
+    "Attribute each attack with cost, difficulty, and detection risk.",
+    "Identify and prioritize mitigations.",
+    "Export analysis in structured formats."
+  ],
+  "prompt_title": "Attack Tree Construction Prompt",
+  "prompt_intro": "Build a comprehensive attack tree for the given security scenario. Define root goals, enumerate attack paths, attribute each attack, and recommend mitigations.",
+  "prompt_checklist": [
+    "Define the root security goal.",
+    "Identify sub-goals with OR/AND relationships.",
+    "Enumerate leaf attack nodes with attributes.",
+    "Analyze paths for difficulty and coverage.",
+    "Provide prioritized mitigations."
+  ]
+}

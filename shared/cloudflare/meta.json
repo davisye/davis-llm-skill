@@ -1,0 +1,41 @@
+{
+  "title": "Cloudflare Platform",
+  "description": "Comprehensive Cloudflare platform skill covering Workers, Pages, storage (KV, D1, R2), AI (Workers AI, Vectorize, Agents SDK), networking (Tunnel, Spectrum), security (WAF, DDoS), and infrastructure-as-code (Terraform, Pulumi). Use for any Cloudflare development task.",
+  "claude_description": "This skill should be used when the user asks about Cloudflare development, deploying to Cloudflare Workers or Pages, setting up Cloudflare storage (KV, D1, R2), using Cloudflare AI services, configuring Cloudflare networking or security features, or writing infrastructure-as-code for Cloudflare. Use for any Cloudflare platform task.",
+  "claude_allowed_tools": ["Read", "Bash", "Write", "WebFetch", "WebSearch"],
+  "copilot_cli_intro": "Build and deploy on the Cloudflare platform using Workers, Pages, storage, AI, networking, and security services.",
+  "copilot_rules": [
+    "Use decision trees to route to the right Cloudflare product.",
+    "Prefer Workers for serverless compute, Pages for full-stack apps.",
+    "Use D1 for relational data, KV for key-value, R2 for object storage.",
+    "Use Wrangler CLI for local development and deployment.",
+    "Consult product-specific references for detailed API usage."
+  ],
+  "copilot_avoid": [
+    "Recommending non-Cloudflare services without justification",
+    "Confusing D1 with traditional relational databases",
+    "Using Workers when Pages Functions would be simpler"
+  ],
+  "vscode_intro": "Build full-stack applications on the Cloudflare platform with Workers, Pages, and integrated storage and AI services.",
+  "vscode_rules": [
+    "Route to the correct Cloudflare product using decision trees.",
+    "Use Wrangler for development and deployment.",
+    "Choose appropriate storage based on data model.",
+    "Leverage Cloudflare AI services when applicable."
+  ],
+  "instruction_rules": [
+    "Use Cloudflare's decision trees to pick the right product.",
+    "Deploy with Wrangler CLI.",
+    "Use Workers for compute, KV/D1/R2 for storage.",
+    "Configure security features (WAF, DDoS, Bot Management) as needed."
+  ],
+  "prompt_title": "Cloudflare Platform Prompt",
+  "prompt_intro": "Help build and deploy applications on the Cloudflare platform. Use decision trees to select the right products and follow best practices for Workers, Pages, storage, and security.",
+  "prompt_checklist": [
+    "Identify the right Cloudflare product for the task.",
+    "Set up Wrangler configuration.",
+    "Implement using the appropriate API/SDK.",
+    "Configure security and networking.",
+    "Deploy and verify."
+  ]
+}

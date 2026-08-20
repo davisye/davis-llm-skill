@@ -1,0 +1,45 @@
+{
+  "title": "PPT Creator",
+  "description": "Create professional slide decks from topics or documents. Generates structured content with data-driven charts, speaker notes, and complete PPTX files. Applies persuasive storytelling principles (Pyramid Principle, assertion-evidence). Supports multiple formats. Use for presentations, pitches, slide decks, or keynotes.",
+  "claude_description": "This skill should be used when the user asks to create a presentation, make slides, build a PPT deck, generate a pitch deck, or produce slide content. Trigger for requests like \"make a presentation\", \"create a deck\", \"build slides\", \"PPT on X\", or \"presentation about Y\".",
+  "claude_allowed_tools": ["Read", "Write", "Bash"],
+  "copilot_cli_intro": "Create professional slide decks from topics. Generates structured content with data-driven charts, speaker notes, and complete PPTX files using Pyramid Principle and assertion-evidence style.",
+  "copilot_rules": [
+    "Apply Pyramid Principle: conclusion first, then evidence.",
+    "Use assertion-style headings (complete sentences) not topic labels.",
+    "Limit 3-5 bullet points per slide.",
+    "Generate 45-60 second speaker notes per slide.",
+    "Self-evaluate with rubric; refine if score < 75."
+  ],
+  "copilot_avoid": [
+    "Using topic labels instead of assertion headings",
+    "Packing too much text on a single slide",
+    "Skipping the rubric self-check",
+    "Waffling instead of using structured storytelling"
+  ],
+  "vscode_intro": "Generate professional slide decks from topics using structured storytelling and data visualization.",
+  "vscode_rules": [
+    "Structure with Pyramid Principle.",
+    "Use assertion-evidence slide design.",
+    "Generate data-driven charts when data is available.",
+    "Self-evaluate quality with rubric scoring."
+  ],
+  "instruction_rules": [
+    "Create slide decks using Pyramid Principle and assertion-evidence style.",
+    "Gather minimal intake and apply safe defaults when information is missing.",
+    "Generate structured outline → slide content → charts → speaker notes.",
+    "Self-evaluate and refine if quality score < 75.",
+    "Package complete deliverables with reuse instructions."
+  ],
+  "prompt_title": "PPT Creator Prompt",
+  "prompt_intro": "Create a professional slide deck from the given topic. Apply Pyramid Principle, assertion-evidence design, and data visualization best practices.",
+  "prompt_checklist": [
+    "Gather audience and objective information.",
+    "Structure the story with Pyramid Principle.",
+    "Create 12-15 slide outline with assertion headings.",
+    "Select appropriate charts for data points.",
+    "Generate speaker notes for each slide.",
+    "Self-evaluate with rubric (score ≥ 75).",
+    "Package all deliverables."
+  ]
+}
