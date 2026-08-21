@@ -9,10 +9,10 @@ usage() {
 Usage:
   sync_all.sh [--force]
 
-Sync: deploys the repository's Codex skills into the global skill hub at
-~/.agents/skills (via ~/.codex/skills symlink, so DSH and every Codex
-environment pick the changes up), then reports any hub skills missing from
-the repo. Run after any change to skills/ or shared/.
+Sync: deploys the repository's skills into the stable catalog at
+~/.agents/skills, rebuilds runtime-specific Codex and DSH views, then reports
+any catalog skills missing from the repo. Run after any change to skills/ or
+shared/.
 
 Steps:
   1. scripts/sync_codex_skill.sh --all [--force]
@@ -52,6 +52,6 @@ echo "=== Step 2/2: Check for hub-only skills ==="
 "$REPO_ROOT/scripts/import_from_codex.sh" --dry-run 2>/dev/null || true
 echo ""
 
-echo "Sync complete. Active skills:"
-echo "  Codex hub (~/.agents/skills): $(ls -d "$HOME/.agents/skills/"*/ 2>/dev/null | wc -l) skills"
+echo "Sync complete. Catalog skills:"
+echo "  Catalog (~/.agents/skills): $(ls -d "$HOME/.agents/skills/"*/ 2>/dev/null | wc -l) skills"
 echo "  Repo: $(find "$REPO_ROOT/skills" -mindepth 1 -maxdepth 1 -type d | wc -l) skills"

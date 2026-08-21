@@ -1,0 +1,55 @@
+schema: 1
+catalog_root: ~/.agents/skills
+enforcement: physical-runtime-views
+
+# All catalog skills below are generic task skills after being copied from their
+# canonical repository source. They may be projected into Codex and DSH.
+shared_catalog_skills:
+  - apple-mail
+  - attack-tree-construction
+  - audio-transcription
+  - browser-act
+  - chrome-cdp-browser-control
+  - cloudflare
+  - commit
+  - context7-docs
+  - frontend-design
+  - gh-address-comments
+  - gh-fix-ci
+  - ghidra
+  - github
+  - google-workspace
+  - librarian
+  - local-system-admin-context
+  - native-web-search
+  - openscad
+  - pi-share
+  - ppt-creator
+  - pptx
+  - project-skill-bootstrap
+  - runtime-skill-guard
+  - send-notifications
+  - sentry
+  - skill-repo-manager
+  - skillsmp-search
+  - summarize
+  - tmux
+  - update-changelog
+  - uv
+
+runtime_only:
+  codex:
+    - academic-research-suite
+  pi: []
+  dsh: []
+
+rejected_runtime_sources:
+  codex:
+    - ~/.pi/agent/agents
+    - ~/.pi/agent/npm
+    - ~/.dsh/.agent-presets
+    - ~/.dsh/profiles
+  dsh:
+    - ~/.pi/agent/agents
+    - ~/.pi/agent/npm
+    - ~/.codex/skills

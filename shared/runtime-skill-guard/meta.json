@@ -1,0 +1,4 @@
+{
+  "title": "Runtime Skill Guard",
+  "description": "Audit runtime-to-skill compatibility; physical runtime views are the enforcement boundary."
+}

@@ -4,9 +4,11 @@ A versioned skill pack for **OpenAI Codex** and **DeepSeek Harness (DSH)**.
 
 [中文说明 / README.zh-CN](./README.zh-CN.md)
 
-All skills deploy to the global skill hub at `~/.agents/skills`, which DSH reads
-directly and every Codex environment reaches through a symlink
-(`~/.codex/skills`, `~/.codex_xinta/.codex/skills`, `~/.codex_xuanzhi/.codex/skills`).
+Skills deploy to the stable catalog at `~/.agents/skills`. The catalog is not a
+runtime discovery root: `scripts/build_runtime_skill_views.sh` builds explicit
+Codex and DSH views below `~/.agents/runtime-skills/`, and Codex homes link to
+the Codex view. This prevents another runtime's skill source from becoming a
+Codex skill merely because it is present in the catalog.
 
 ## What this repo contains
 
@@ -29,7 +31,7 @@ directly and every Codex environment reaches through a symlink
 
 1. Put reusable workflow semantics in `shared/<skill-name>/` (core.md + meta.json)
 2. Keep the deployment SKILL.md in `skills/<skill-name>/`
-3. Sync into the global hub with `scripts/sync_all.sh`
+3. Sync into the catalog and rebuild runtime views with `scripts/sync_all.sh`
 
 ## Directory layout
 
@@ -41,13 +43,13 @@ scripts/    Import, install, and sync tools
 
 ## Sync into the hub
 
-Sync all skills into the global hub at `~/.agents/skills`:
+Sync all skills into the catalog at `~/.agents/skills` and rebuild views:
 
 ```bash
 ./scripts/sync_all.sh
 ```
 
-Sync one skill, or all, into `~/.codex/skills` (a symlink to the hub):
+Sync one skill, or all, into the catalog and rebuild the runtime views:
 
 ```bash
 ./scripts/sync_codex_skill.sh <skill-name>
@@ -81,8 +83,11 @@ maintained anymore), and commit.
 
 - `local-system-admin-context` is machine-specific; review its
   `references/local-environment.md` baseline before copying to another machine.
-- 16 skills (apple-mail … uv) are symlinked into the hub from the upstream
-  `mitsuhiko/agent-stuff` checkout and kept as imported snapshots here.
+- Imported upstream skills must be deployed as catalog-owned directories, never
+  as links into another runtime's checkout.
+- Runtime ownership and allowlists live in `runtime/skill-index.yaml`. The
+  projection script is the enforcement boundary; documentation-only metadata is
+  advisory.
 
 ## License
 
