@@ -1,0 +1,317 @@
+{
+  "schema": 1,
+  "checked_date": "2026-11-03",
+  "retired": [
+    "apple-mail",
+    "attack-tree-construction",
+    "audio-transcription",
+    "ppt-creator",
+    "pptx"
+  ],
+  "skills": {
+    "academic-research-suite": {
+      "kind": "imported",
+      "entry_sha256": "d7703bf352451b603e55f6d06ee88f14ab3c5164163eec5283df0ba378c5b425",
+      "version": "3.24.0",
+      "upstream": {
+        "repo": "Imbad0202/academic-research-skills-codex",
+        "path": "skills/academic-research-suite",
+        "ref": "main",
+        "tag": "v3.24.0",
+        "commit": "0b6dca8b6e5188c7497c9acf4bd8145fbd4fc673",
+        "entry_blob": "243131da33a3d47391bc1c5580fea1eb04af85a8"
+      }
+    },
+    "agent-mailbox": {
+      "kind": "local",
+      "entry_sha256": "984b4905f923cba1509c2d00af924ab0eadff8ac3a0691b5797e919e46ab83f9"
+    },
+    "archify": {
+      "kind": "imported",
+      "entry_sha256": "93434ad579983f4cff639c2b7230c311e0785cc48a25b66b1498e1802be7de91",
+      "upstream": {
+        "repo": "tt-a1i/archify",
+        "path": "archify",
+        "ref": "main",
+        "commit": "208acba8d412335185b2056fedf54b3405df43fb",
+        "entry_blob": "fe0448d8f02ab7ce81903d8ec50ef51cd9582346",
+        "tag": "v3.2.0"
+      },
+      "version": "3.2.0"
+    },
+    "browser-act": {
+      "kind": "imported",
+      "entry_sha256": "b0a3a22320d22610bb2b0dac085514c57c8f3dbfc1249b717af6ecd714913372",
+      "upstream": {
+        "repo": "browser-act/skills",
+        "path": "browser-act",
+        "ref": "main",
+        "commit": "11c057b03f92101642cadc9f840564574120d184",
+        "entry_blob": "1e0db2ac51c886516adbb3e83b1a8e0f9df911e4"
+      },
+      "tool": {
+        "package": "browser-act-cli",
+        "installed_version": "1.5.0",
+        "skill_version": "2.0.2"
+      }
+    },
+    "chrome-cdp-browser-control": {
+      "kind": "local",
+      "entry_sha256": "eb5b6e8dbb2be341444d96c4d28f055774845f9ef569cf1de91efe51665872c2"
+    },
+    "cloudflare": {
+      "kind": "imported",
+      "entry_sha256": "4ae6ab64ba0c08d3f469bd33ed7ea18166288fcc03f34d114dc2394b534bd153",
+      "upstream": {
+        "repo": "cloudflare/skills",
+        "path": "skills/cloudflare",
+        "ref": "main",
+        "commit": "1a33048817d06df12882cb881dfc754e7039954a",
+        "entry_blob": "695d8d6db7553e5fc151393ea891e00e44fd9477"
+      }
+    },
+    "commit": {
+      "kind": "imported",
+      "entry_sha256": "05eaa872c4e95408d85f34a7443574d8619a26fa8a173db4b49dcdeb5b33e5a0",
+      "upstream": {
+        "repo": "mitsuhiko/agent-stuff",
+        "path": "skills/commit",
+        "ref": "main",
+        "commit": "0865c849befd2021490679f96a8dee58c84ac857",
+        "entry_blob": "3b7a4f1d3b92eed939eb5ef805a503238674239e"
+      }
+    },
+    "context7-docs": {
+      "kind": "local",
+      "entry_sha256": "94aa44637227da5a2ade2a1f3ce4a9aff1e24fea5a544a8e286b5af15d9a7ddf"
+    },
+    "discord-cli-server-management": {
+      "kind": "imported",
+      "entry_sha256": "5707451d4193b73c5cc1bba316005fbbd969e08c3a659302790789ecaa994094",
+      "upstream": {
+        "repo": "1solomonwakhungu/discord-cli",
+        "path": "skills/discord-cli-server-management",
+        "ref": "main",
+        "entry_blob": "1b02d945dfba7d085ab401326f8b14274baa91fe",
+        "commit": "7347ae18cfe540c2fed74894fc26a9a4953b708d"
+      }
+    },
+    "find-skills": {
+      "kind": "imported",
+      "entry_sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f",
+      "upstream": {
+        "repo": "vercel-labs/skills",
+        "path": "skills/find-skills",
+        "ref": "main",
+        "entry_blob": "a41bdd074bb587afd861332cf2f473f3154de4d7",
+        "commit": "7a5e920bead4b1039a6d6df5d7e1163b7b09423a"
+      }
+    },
+    "frontend-design": {
+      "kind": "imported",
+      "entry_sha256": "d91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3",
+      "upstream": {
+        "repo": "anthropics/skills",
+        "path": "skills/frontend-design",
+        "ref": "main",
+        "commit": "ca45fc496a3436251f191354091d557da31c15b5",
+        "entry_blob": "a5333457c414d20d625f307df945842c0952ecc3"
+      }
+    },
+    "gh-address-comments": {
+      "kind": "imported",
+      "entry_sha256": "77389eefd3fb6584210668ca8e43f4b8de87e7722ddd953474bc9e24cdfaaedd",
+      "upstream": {
+        "repo": "openai/skills",
+        "path": "skills/.curated/gh-address-comments",
+        "ref": "main",
+        "commit": "49f948faa9258a0c61caceaf225e179651397431",
+        "entry_blob": "0ee19e080dc9f0b082157080d1e65511ddc49e7e"
+      }
+    },
+    "gh-fix-ci": {
+      "kind": "imported",
+      "entry_sha256": "7b326b4a2f0f5f85122144628ec02077e48841e0e0e82efce88b3415bcfb7c26",
+      "upstream": {
+        "repo": "openai/skills",
+        "path": "skills/.curated/gh-fix-ci",
+        "ref": "main",
+        "commit": "49f948faa9258a0c61caceaf225e179651397431",
+        "entry_blob": "76bdeb6a7bff93cbe924c0652f1fd7a3c3ffc46c"
+      }
+    },
+    "ghidra": {
+      "kind": "imported",
+      "entry_sha256": "d93aa0f847e7f3f25557181723255d94aa33d0f19c81a937ea5f75dbc1a7dc1a",
+      "upstream": {
+        "repo": "mitsuhiko/agent-stuff",
+        "path": "skills/ghidra",
+        "ref": "main",
+        "commit": "0865c849befd2021490679f96a8dee58c84ac857",
+        "entry_blob": "89c7da0604f4f1be89aa9151e13040c0ba45248b"
+      }
+    },
+    "github": {
+      "kind": "imported",
+      "entry_sha256": "51b28818a6f0359287d5c8244a6fdc59a4ac5504596deb193b28b81832221c86",
+      "upstream": {
+        "repo": "mitsuhiko/agent-stuff",
+        "path": "skills/github",
+        "ref": "main",
+        "commit": "0865c849befd2021490679f96a8dee58c84ac857",
+        "entry_blob": "03b2a00336ec9cbf4fc8ea624c3cf6b3920c0b2a"
+      }
+    },
+    "google-workspace": {
+      "kind": "imported",
+      "entry_sha256": "45030cae07f2f31a6d780b49412b8e5449c99f05826efcc957f8aa6fba53118f",
+      "upstream": {
+        "repo": "mitsuhiko/agent-stuff",
+        "path": "skills/google-workspace",
+        "ref": "main",
+        "commit": "0865c849befd2021490679f96a8dee58c84ac857",
+        "entry_blob": "07890ce47a607bc1392e027c7e307dba00bea28b"
+      },
+      "local_overlays": [
+        "runtime-neutral XDG config directory; connector preference; no credential migration"
+      ]
+    },
+    "librarian": {
+      "kind": "imported",
+      "entry_sha256": "40b60c3ba69159a9e21f80b2869e739564318a2e7f2933b3078a279938e0668f",
+      "upstream": {
+        "repo": "mitsuhiko/agent-stuff",
+        "path": "skills/librarian",
+        "ref": "main",
+        "commit": "0865c849befd2021490679f96a8dee58c84ac857",
+        "entry_blob": "4df0cee1bb801f70546cf1654d2a0b54ea2b93ef"
+      }
+    },
+    "local-system-admin-context": {
+      "kind": "local",
+      "entry_sha256": "5a665b2086f2eec670169d180c5997ef0bc6f6da656ead1dad682f277d2ff530"
+    },
+    "native-web-search": {
+      "kind": "imported",
+      "entry_sha256": "03ac5535f56a2cda1a044707d6963868525798ce9add7d4e8ebfbb62948d6a45",
+      "upstream": {
+        "repo": "mitsuhiko/agent-stuff",
+        "path": "skills/native-web-search",
+        "ref": "main",
+        "commit": "0865c849befd2021490679f96a8dee58c84ac857",
+        "entry_blob": "fab18ff9cf3756a4c2af13146b0556fffe2bd943"
+      },
+      "local_overlays": [
+        "host-native search routing; legacy Pi runner inactive"
+      ]
+    },
+    "openscad": {
+      "kind": "imported",
+      "entry_sha256": "e49b7c056c4f9cee67b6e3fa4620915ccdddf12278159db9073cc063ee957799",
+      "upstream": {
+        "repo": "mitsuhiko/agent-stuff",
+        "path": "skills/openscad",
+        "ref": "main",
+        "commit": "0865c849befd2021490679f96a8dee58c84ac857",
+        "entry_blob": "112ad117fd0b72d89ee4a9667b6f5dc159135071"
+      }
+    },
+    "pi-share": {
+      "kind": "imported",
+      "entry_sha256": "b00ea79b9c2bfbadc1f53618ccbb7ff3b5e7f790b69d4c59f358e2697871278f",
+      "upstream": {
+        "repo": "mitsuhiko/agent-stuff",
+        "path": "skills/pi-share",
+        "ref": "main",
+        "commit": "0865c849befd2021490679f96a8dee58c84ac857",
+        "entry_blob": "33a411129d9f5bcf8037dfc4665fed7f6faee98b"
+      }
+    },
+    "project-skill-bootstrap": {
+      "kind": "local",
+      "entry_sha256": "699d57cc433a7b42ca052dca1567619cc17e745696de8e473f0717266bb5d32f"
+    },
+    "runtime-skill-guard": {
+      "kind": "local",
+      "entry_sha256": "2f5e8f8941610d8346820ccbdb56124921719cc3eb979894c1c7664d5a10fd0b"
+    },
+    "send-notifications": {
+      "kind": "local",
+      "entry_sha256": "54477df152008c89310d7119a9274c9d9646aeb883015134540361463e7dc57f"
+    },
+    "sentry": {
+      "kind": "imported",
+      "entry_sha256": "78f8229cfe66cbaf00c24a9e0c8cd202cf0efa584c7fb048c0232676134ebfa0",
+      "upstream": {
+        "repo": "mitsuhiko/agent-stuff",
+        "path": "skills/sentry",
+        "ref": "main",
+        "commit": "0865c849befd2021490679f96a8dee58c84ac857",
+        "entry_blob": "decbef1ad4254280789933f1cbda78f6eba63050"
+      }
+    },
+    "skill-repo-manager": {
+      "kind": "local",
+      "entry_sha256": "6244f9c2b4c4bf0187c76765c851e2e38dec6a3080c4e74d30fbc3e5d56c01c0"
+    },
+    "skillsmp-search": {
+      "kind": "local",
+      "entry_sha256": "9e42ab0f32f204c89d598806414607689d991c85611638448ab331b22a32f481"
+    },
+    "summarize": {
+      "kind": "imported",
+      "entry_sha256": "3100cd6a8b4569474c027e0904b9bd0947eea5be7f67f334cfc3559a5fc4f9d1",
+      "upstream": {
+        "repo": "mitsuhiko/agent-stuff",
+        "path": "skills/summarize",
+        "ref": "main",
+        "commit": "0865c849befd2021490679f96a8dee58c84ac857",
+        "entry_blob": "7c60762e52defbf4f83fcdaf35261ab141f43c03"
+      }
+    },
+    "tmux": {
+      "kind": "imported",
+      "entry_sha256": "114465682ecd85b4c5176acebbd991e6b952f0360d0602b51e2c6cdc01ba497e",
+      "upstream": {
+        "repo": "mitsuhiko/agent-stuff",
+        "path": "skills/tmux",
+        "ref": "main",
+        "commit": "0865c849befd2021490679f96a8dee58c84ac857",
+        "entry_blob": "e26d245af1932a4046c351921ac754a83a7a7b35"
+      }
+    },
+    "update-changelog": {
+      "kind": "imported",
+      "entry_sha256": "68f67516baaa881bb304ed29d1e407f6e88e90952f0126f9fa6d9941cad80522",
+      "upstream": {
+        "repo": "mitsuhiko/agent-stuff",
+        "path": "skills/update-changelog",
+        "ref": "main",
+        "commit": "0865c849befd2021490679f96a8dee58c84ac857",
+        "entry_blob": "353b042cdcc359956607a6d2c06cb64287f97303"
+      }
+    },
+    "uv": {
+      "kind": "imported",
+      "entry_sha256": "cb3c7d63a5a6712a1375c2845c5fee5ec59b16b025c60521a546b64a7c1d158d",
+      "upstream": {
+        "repo": "mitsuhiko/agent-stuff",
+        "path": "skills/uv",
+        "ref": "main",
+        "commit": "0865c849befd2021490679f96a8dee58c84ac857",
+        "entry_blob": "102642687eb944e96ffafb5d510442316fb913ea"
+      }
+    },
+    "write-awesome-readme": {
+      "kind": "imported",
+      "entry_sha256": "113a9f3470d97107a7c96fa83fc552b65cdb3fcc2d1304ce6ef8187d754d550a",
+      "upstream": {
+        "repo": "0xCryptoZen/write-awesome-readme",
+        "path": "",
+        "ref": "main",
+        "entry_blob": "eb86da16b27e33a4469e4176238764e9d2138f95",
+        "commit": "a1f89ff4e50de09fa9e62f35f97d1cf500e511f3"
+      }
+    }
+  }
+}

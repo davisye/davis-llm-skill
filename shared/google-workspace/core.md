@@ -1,7 +1,14 @@
-
 # Google Workspace
 
 Use this skill for Google Workspace tasks (Gmail, Drive, Calendar, Docs, Sheets, etc.).
+
+Prefer connected Workspace tools when they cover the requested action. Use
+these scripts for capabilities or accounts not covered by those connections.
+`GOOGLE_WORKSPACE_CONFIG_DIR` and `GOOGLE_WORKSPACE_TOKENS_DIR` can override the
+neutral storage defaults; `$XDG_DATA_HOME` is respected. Do not search or migrate
+credentials from another runtime's private directories automatically. If this
+installation has no signed-in account, use a connected tool or ask for the
+account-specific login needed by the requested task.
 
 ## Files
 
@@ -14,7 +21,7 @@ This skill is **profile-based by email address**.
 
 - There is **no default account**.
 - Every API call must specify `--email <account@example.com>`.
-- Tokens are stored per-email under `~/.pi/google-workspace/tokens/`.
+- Tokens are stored per-email under `~/.local/share/agent-google-workspace/tokens/`.
 
 Before running API calls, discover available signed-in accounts:
 

@@ -13,7 +13,7 @@ Usage:
   import_from_codex.sh [--dry-run]
 
 Detects skills in ~/.codex/skills that are not yet in the repo, and imports them.
-After importing, regenerate adapters with: python scripts/generate_adapters.py --all
+After importing, review metadata and register names in runtime/skill-index.yaml.
 EOF
 }
 
@@ -101,7 +101,7 @@ elif [[ "$DRY_RUN" -eq 1 ]]; then
 else
   echo ""
   echo "Import complete. Next steps:"
-  echo "  python $REPO_ROOT/scripts/generate_adapters.py --all"
-  echo "  $REPO_ROOT/scripts/sync_codex_skill.sh --all --force"
-  echo "  $REPO_ROOT/scripts/sync_claude_skill.sh --all --force"
+  echo "  Review shared metadata and register names in runtime/skill-index.yaml"
+  echo "  $REPO_ROOT/scripts/sync_all.sh"
+  echo "  Review any reported conflicts before synchronizing."
 fi

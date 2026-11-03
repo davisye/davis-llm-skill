@@ -1,0 +1,10 @@
+{
+  "title": "write-awesome-readme",
+  "description": "Generate, rewrite, review, audit, or improve professional README.md files for software repositories. Use when the user asks to create a README for a project, rewrite or refresh an existing README, review/audit a README and suggest what can be improved or optimized (\"check this README\", \"what's missing\", \"how can this README be better\"), polish a GitHub/open-source README, add specific sections (install, quickstart, usage, development, license, star history), or turn repository facts into clear project documentation.",
+  "upstream": {
+    "repo": "0xCryptoZen/write-awesome-readme",
+    "path": "write-awesome-readme",
+    "ref": "main",
+    "entry_blob": "eb86da16b27e33a4469e4176238764e9d2138f95"
+  }
+}

@@ -1,4 +1,11 @@
 {
   "title": "native-web-search",
-  "description": "\"Trigger native web search. Use when you need quick internet research with concise summaries and full source URLs.\""
+  "description": "Search the web with the current runtime's native search tools and return concise findings with direct source links. Use for current facts and quick internet research.",
+  "upstream": {
+    "repo": "mitsuhiko/agent-stuff",
+    "path": "skills/native-web-search",
+    "ref": "main",
+    "commit": "0865c849befd2021490679f96a8dee58c84ac857",
+    "entry_blob": "fab18ff9cf3756a4c2af13146b0556fffe2bd943"
+  }
 }

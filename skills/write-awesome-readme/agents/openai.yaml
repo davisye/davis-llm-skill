@@ -1,0 +1,4 @@
+interface:
+  display_name: "Write Awesome README"
+  short_description: "Generate polished project README files"
+  default_prompt: "Use $write-awesome-readme to create a professional README for this repository."

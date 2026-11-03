@@ -1,4 +1,4 @@
-name: Validate Generated Adapters
+name: Validate Skill Catalog
 
 on:
   push:
@@ -11,14 +11,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-
-      - name: Regenerate adapters
-        run: python scripts/generate_adapters.py --all
-
-      - name: Check for drift
-        run: git diff --exit-code
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v6
+      - name: Validate canonical skill metadata and source records
+        run: uv run --script scripts/check_skill_catalog.py --source-only
+      - name: Check shell syntax
+        run: bash -n scripts/*.sh

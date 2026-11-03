@@ -1,4 +1,4 @@
 {
-  "title": "Skill Repo Manager",
-  "description": "Use when working with the davis-llm-skill repository itself: adding skills, syncing into the DSH/Codex hub (~/.agents/skills), reviewing drift, or resolving conflicts between the repo copy and the deployed hub copy."
+  "title": "skill-repo-manager",
+  "description": "Maintain the davis-llm-skill canonical repository, deployed skill catalog, source locks, and isolated Codex/DSH discovery views. Use for skill updates, imports, synchronization, or drift review."
 }

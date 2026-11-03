@@ -1,71 +1,48 @@
 ---
 name: skill-repo-manager
-description: "Use when working with the davis-llm-skill repository itself: adding skills, syncing into the DSH/Codex hub (~/.agents/skills), reviewing drift, or resolving conflicts between the repo copy and the deployed hub copy."
+description: Maintain the davis-llm-skill canonical repository, deployed skill catalog, source locks, and isolated Codex/DSH discovery views. Use for skill updates, imports, synchronization, or drift review.
 ---
 
 # Skill Repo Manager
 
-Use this skill when the task is about maintaining the shared skill repository, not about executing one domain skill.
+`~/project/davis-llm-skill/skills/` is the canonical deployable source.
+`shared/<name>/core.md` and `meta.json` mirror its workflow and discovery metadata.
+`~/.agents/skills/` is a deployed catalog, not a shared runtime discovery root.
+Codex and DSH use separate views under `~/.agents/runtime-skills/`; never link a
+skill into another runtime's private configuration.
 
-## Source Of Truth
+## Update and synchronize
 
-- Treat `~/project/davis-llm-skill/skills/` and `shared/` as the canonical sources.
-- Treat `~/.agents/skills/` as the global skill hub (deployed location): DSH reads it
-  directly; the Codex environments (`~/.codex/skills`, `~/.codex_xinta/.codex/skills`,
-  `~/.codex_xuanzhi/.codex/skills`) reach it through symlinks.
-- Prefer editing the repository copy first, then sync outward into the hub.
+1. Inspect repository and catalog drift. Preserve unrelated dirty changes,
+   machine-specific baseline updates, and any meaningful local adaptations.
+2. For external skills, consult `runtime/skill-sources.json`. Update from an
+   official tagged release where available, or record the exact upstream commit.
+   Keep supporting resources and licenses together with the entrypoint.
+3. Update canonical `skills/` first, then mirror its body and parsed YAML metadata
+   into `shared/`. Do not regenerate obsolete client adapters.
+4. Register active names and runtime ownership in `runtime/skill-index.yaml`.
+   User-retired names stay in `retired_catalog_skills`; never restore them merely
+   because their historical source directories remain in the repository.
+5. Run `scripts/sync_all.sh`. A conflicting destination must fail visibly before
+   any skill is copied. After reviewing the diff, `--force` preserves replaced
+   skill directories in a backup outside discovery roots.
+6. Run `uv run scripts/check_skill_catalog.py` and
+   `scripts/build_runtime_skill_views.sh --check`. Add `--upstream` to the former
+   for a read-only source check. It reports changes; it never installs them.
+7. Tell the user what changed and what was verified. Open a new Codex conversation
+   or restart the client if its skill list is cached; recheck other runtimes' lists
+   rather than assuming they refreshed.
 
-## Workflow
+## Imports and local ownership
 
-1. Identify whether the task is repo authoring, repo -> hub sync, or conflict resolution.
-2. Before syncing, inspect whether the deployed target already differs from the repo copy.
-3. If there is drift, do not overwrite silently. Review the diff and decide which side wins.
-4. Use `scripts/sync_all.sh` to deploy repo skills into the hub, or `scripts/sync_codex_skill.sh` for one skill.
-5. Only use `--force` after reviewing differences and deciding the repo is authoritative.
-6. After sync, tell the user whether Codex needs a restart to pick up new or changed skills
-   (DSH refreshes its skill catalog live via its watcher; no restart needed there).
-7. If the hub copy was updated in place (e.g. `local-system-admin-context/references/local-environment.md`
-   after a system change), port it back into the repo before committing.
+`scripts/import_from_codex.sh --dry-run` inventories catalog and Codex-only installs.
+Review the source before importing; the helper skips existing canonical skills.
+Register newly imported skills explicitly before building runtime views.
 
-## Conflict Rules
+The builder reads the YAML allowlist instead of a second hardcoded list. It
+updates managed links incrementally, preserves `.system` and unrelated runtime-local
+directories, and removes only explicitly retired catalog links. An active name
+occupied by a real local directory requires review before converting it to a link.
 
-- If the repo copy changed and the deployed copy also changed, stop and compare them.
-- Do not merge by guesswork when both sides have meaningful edits.
-- If the user wants local edits preserved, port them back into the repo before syncing.
-- If the repo should overwrite local copies, use `--force` explicitly and say that the deployed copy was replaced.
-
-## Hub Direction
-
-- Keep reusable workflow logic in `shared/<skill>/` (core.md + meta.json) as the canonical source.
-- The deployment SKILL.md lives in `skills/<name>/SKILL.md` and is synced verbatim into the hub.
-- No client adapters (Claude / Copilot / VS Code) are maintained anymore; do not regenerate them.
-- For shared-first skills, update `shared/<skill-name>/` first, then port the change to `skills/<skill-name>/`.
-
-## Repository Checklist
-
-When adding or updating a skill:
-
-1. Update the shared source under `shared/<skill-name>/` (core.md + meta.json).
-2. Update the deployment skill under `skills/<skill-name>/` (SKILL.md + supporting files).
-3. Sync to the hub with `scripts/sync_all.sh` (or `scripts/sync_codex_skill.sh <name>`).
-4. If the skill is one of the 16 symlinked from upstream `mitsuhiko/agent-stuff`,
-   refresh the imported snapshot in the repo after upstream changes.
-
-## New Skill Import
-
-When a skill exists in the hub but not in the repo:
-
-1. Run `scripts/import_from_codex.sh` to pull it into the repo (it reads the hub through
-   the `~/.codex/skills` symlink and skips skills already present).
-2. Review the generated `shared/<name>/meta.json` and fix CRLF/quotes if the source was CRLF.
-3. Commit the import; the hub copy already matches the repo copy byte-for-byte.
-
-## Paths
-
-- Repo root: `/home/davisye/project/davis-llm-skill`
-- Global hub: `/home/davisye/.agents/skills` (git-tracked; README documents provenance)
-- Codex deploy target: `/home/davisye/.codex/skills` -> symlink to the hub
-- Sync all: `scripts/sync_all.sh`
-- Codex sync: `scripts/sync_codex_skill.sh`
-- Import from hub: `scripts/import_from_codex.sh`
-- New-machine installer: `scripts/install_codex_skills.sh`
+Do not edit runtime-owned `.system` skills as part of ordinary catalog updates.
+Do not access or migrate credentials while checking skill versions.

@@ -10,7 +10,7 @@ const { spawn, spawnSync } = require('node:child_process');
 
 const CONFIG_DIR =
   process.env.GOOGLE_WORKSPACE_CONFIG_DIR ||
-  path.join(os.homedir(), '.pi', 'google-workspace');
+  path.join(process.env.XDG_DATA_HOME || path.join(os.homedir(), '.local', 'share'), 'agent-google-workspace');
 
 const CREDENTIALS_PATH =
   process.env.GOOGLE_WORKSPACE_CREDENTIALS ||

@@ -1,4 +1,11 @@
 {
   "title": "google-workspace",
-  "description": "\"Access Google Workspace APIs (Drive, Docs, Calendar, Gmail, Sheets, Slides, Chat, People) via local helper scripts without MCP. Handles OAuth login and direct API calls.\""
+  "description": "Access Google Workspace APIs (Drive, Docs, Calendar, Gmail, Sheets, Slides, Chat, People) via local helper scripts without MCP. Handles OAuth login and direct API calls.",
+  "upstream": {
+    "repo": "mitsuhiko/agent-stuff",
+    "path": "skills/google-workspace",
+    "ref": "main",
+    "commit": "0865c849befd2021490679f96a8dee58c84ac857",
+    "entry_blob": "07890ce47a607bc1392e027c7e307dba00bea28b"
+  }
 }

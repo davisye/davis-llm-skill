@@ -27,6 +27,11 @@ copy_skill() {
   local name="$1"
   local src="$SRC_ROOT/$name"
   local dest="$DEST_ROOT/$name"
+  local backup_root
+  if ! printf '%s\n' "${MANAGED[@]}" | grep -Fxq -- "$name"; then
+    echo "Skill is retired or not registered: $name" >&2
+    return 1
+  fi
 
   if [[ ! -d "$src" ]]; then
     echo "Missing source skill: $name" >&2
@@ -48,7 +53,7 @@ copy_skill() {
       echo "Materialized: $name"
       return 0
     fi
-    if diff -qr "$src" "$dest" >/dev/null 2>&1; then
+    if diff -qr --exclude=__pycache__ --exclude="*.pyc" --exclude="*.bak-*" "$src" "$dest" >/dev/null 2>&1; then
       echo "Unchanged: $name"
       return 0
     fi
@@ -57,7 +62,9 @@ copy_skill() {
       echo "Review diff, then rerun with --force if repo should win." >&2
       return 2
     fi
-    rm -rf "$dest"
+    backup_root="${SKILL_SYNC_BACKUP_ROOT:-$HOME/.agents/runtime-skill-backups/catalog-$STAMP}"
+    mkdir -p "$backup_root"
+    mv "$dest" "$backup_root/$name"
   fi
 
   cp -a "$src" "$dest"
@@ -65,6 +72,11 @@ copy_skill() {
 }
 
 SKILLS=()
+mapfile -t MANAGED < <(uv run --script "$REPO_ROOT/scripts/build_runtime_skill_views.py" --list)
+if [[ "${#MANAGED[@]}" -eq 0 ]]; then
+  echo "No registered skills; refusing synchronization" >&2
+  exit 1
+fi
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
@@ -90,9 +102,7 @@ done
 mkdir -p "$DEST_ROOT"
 
 if [[ "$SYNC_ALL" -eq 1 ]]; then
-  while IFS= read -r dir; do
-    SKILLS+=("$(basename "$dir")")
-  done < <(find "$SRC_ROOT" -mindepth 1 -maxdepth 1 -type d | sort)
+  SKILLS=("${MANAGED[@]}")
 fi
 
 if [[ "${#SKILLS[@]}" -eq 0 ]]; then
@@ -100,9 +110,30 @@ if [[ "${#SKILLS[@]}" -eq 0 ]]; then
   exit 1
 fi
 
+for skill in "${SKILLS[@]}"; do
+  if ! printf '%s\n' "${MANAGED[@]}" | grep -Fxq -- "$skill"; then
+    echo "Skill is retired or not registered: $skill" >&2
+    exit 1
+  fi
+  src="$SRC_ROOT/$skill"
+  dest="$DEST_ROOT/$skill"
+  if [[ ! -f "$src/SKILL.md" ]]; then
+    echo "Missing source skill: $skill" >&2
+    exit 1
+  fi
+  if [[ "$FORCE" -ne 1 && ( -e "$dest" || -L "$dest" ) ]]; then
+    if [[ -L "$dest" ]] || ! diff -qr --exclude=__pycache__ --exclude="*.pyc" --exclude="*.bak-*" "$src" "$dest" >/dev/null 2>&1; then
+      echo "Conflict: $skill differs at $dest; review before --force" >&2
+      exit 2
+    fi
+  fi
+done
+
 status=0
 for skill in "${SKILLS[@]}"; do
-  if ! copy_skill "$skill"; then
+  if copy_skill "$skill"; then
+    :
+  else
     status=$?
   fi
 done

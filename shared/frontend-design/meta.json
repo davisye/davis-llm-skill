@@ -1,4 +1,11 @@
 {
   "title": "frontend-design",
-  "description": "\"Design and implement distinctive, production-ready frontend interfaces with strong aesthetic direction. Use when asked to create or restyle web pages, components, or applications (HTML/CSS/JS, React, Vue, etc.).\""
+  "description": "Guidance for distinctive, intentional visual design when building new UI or reshaping an existing one. Helps with aesthetic direction, typography, and making choices that don't read as templated defaults.",
+  "upstream": {
+    "repo": "anthropics/skills",
+    "path": "skills/frontend-design",
+    "ref": "main",
+    "commit": "ca45fc496a3436251f191354091d557da31c15b5",
+    "entry_blob": "a5333457c414d20d625f307df945842c0952ecc3"
+  }
 }

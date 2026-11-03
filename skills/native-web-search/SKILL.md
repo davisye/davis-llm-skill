@@ -1,49 +1,18 @@
 ---
 name: native-web-search
-description: "Trigger native web search. Use when you need quick internet research with concise summaries and full source URLs."
+description: Search the web with the current runtime's native search tools and return concise findings with direct source links. Use for current facts and quick internet research.
 ---
 
 # Native Web Search
 
-Use this skill to run a **fast model with native web search enabled** and get a concise research summary with explicit full URLs.
+Use the current runtime's available web search and page-reading tools. Prefer
+primary sources, open the pages needed to establish the answer, and cite their
+direct URLs. State uncertainty when a claim could not be verified.
 
-## Script
+Use focused queries and batch independent searches where supported. Match the
+depth to the user's request rather than launching a separate model by default.
 
-- `search.mjs`
-
-## Usage
-
-Run from this skill directory:
-
-```bash
-node search.mjs "<what to search>" --purpose "<why you need this>"
-```
-
-Examples:
-
-```bash
-node search.mjs "latest python release" --purpose "update dependency notes"
-node search.mjs "vite 7 breaking changes" --purpose "prepare migration checklist"
-```
-
-Optional flags:
-
-- `--provider openai-codex|anthropic`
-- `--model <model-id>`
-- `--timeout <ms>`
-- `--json`
-
-## Output expectations
-
-The script instructs the model to:
-- search the internet for the requested topic
-- provide a concise summary for the given purpose
-- include full canonical URLs (`https://...`) for each key finding
-- highlight disagreements between sources
-
-## Notes
-
-- No extra npm install is required.
-- If module resolution fails, set `PI_AI_MODULE_PATH` to `@earendil-works/pi-ai`'s `dist/index.js` path.
-- If OAuth helper resolution fails, set `PI_AI_OAUTH_MODULE_PATH` to `@earendil-works/pi-ai`'s `dist/oauth.js` path.
-- For OAuth providers, the script can fall back to a still-valid cached `access` token from `~/.pi/agent/auth.json`.
+The retained `search.mjs` is an upstream Pi integration, not a Codex or DSH
+entrypoint. Do not execute it from these runtimes or load Pi's settings, modules,
+or OAuth credentials. If native search is unavailable, disclose that limitation
+and use an available authorized connector instead of another runtime's account.
